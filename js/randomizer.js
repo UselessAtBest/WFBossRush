@@ -1,20 +1,45 @@
 const Randomizer = (() => {
     let rollsA = 0;
     let rollsB = 0;
-    let poolA = [];
-    let poolB = [];
+    let poolNormal = [];
+    let poolLimited = [];
   
     async function init() {
-      poolA = await (await fetch("data/poolA.json")).json();
-      poolB = await (await fetch("data/poolB.json")).json();
+      poolNormal = await (await fetch("data/poolNormal.json")).json();
+      poolLimited = await (await fetch("data/poolLimited.json")).json();
   
-      document.getElementById("randomBtnA").addEventListener("click", () => roll(poolA, "A"));
-      document.getElementById("randomBtnB").addEventListener("click", () => roll(poolB, "B"));
+      // Attach remaining reroll counts to each item
+      poolNormal.forEach(i => {
+        if (i.rerolls === undefined) i.rerolls = Infinity; // default: unlimited
+        i._remaining = i.rerolls;
+      });
+      poolLimited.forEach(i => {
+        if (i.rerolls === undefined) i.rerolls = Infinity;
+        i._remaining = i.rerolls;
+      });
+  
+      document.getElementById("randomBtnA").addEventListener("click", () => roll(poolNormal, "A"));
+      document.getElementById("randomBtnB").addEventListener("click", () => roll(poolLimited, "B"));
     }
   
-    function addRolls({ poolA = 0, poolB = 0 }) {
-      rollsA += poolA;
-      rollsB += poolB;
+    function addRolls({ poolNormal = 0, poolLimited = 0 }) {
+      rollsA += poolNormal;
+      rollsB += poolLimited;
+      updateLabels();
+    }
+  
+    function refundRoll(item) {
+      // Refund roll back to correct pool
+      if (item.sourcePool === "A") {
+        rollsA++;
+        // restore item back into pool
+        const poolItem = poolNormal.find(i => i.name === item.name);
+        if (poolItem) poolItem._remaining++;
+      } else if (item.sourcePool === "B") {
+        rollsB++;
+        const poolItem = poolLimited.find(i => i.name === item.name);
+        if (poolItem) poolItem._remaining++;
+      }
       updateLabels();
     }
   
@@ -27,10 +52,24 @@ const Randomizer = (() => {
       if (type === "A" && rollsA <= 0) return;
       if (type === "B" && rollsB <= 0) return;
   
-      const item = pool[Math.floor(Math.random() * pool.length)];
+      // filter out exhausted items
+      const available = pool.filter(i => i._remaining > 0);
+      if (available.length === 0) {
+        alert("No more items available in this pool!");
+        return;
+      }
+  
+      // pick random available item
+      const item = available[Math.floor(Math.random() * available.length)];
+      item._remaining--; // consume one reroll
+  
       if (type === "A") rollsA--; else rollsB--;
       updateLabels();
-      Inventory.addItem(item);
+  
+      // Attach source pool for refunds
+      const rolledItem = { ...item, sourcePool: type };
+      Inventory.addItem(rolledItem);
+  
       showRollPopup(item);
     }
   
@@ -50,6 +89,6 @@ const Randomizer = (() => {
       return str.charAt(0).toUpperCase() + str.slice(1);
     }
   
-    return { init, addRolls };
+    return { init, addRolls, refundRoll };
   })();
   

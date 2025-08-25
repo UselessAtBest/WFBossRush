@@ -1,0 +1,13 @@
+[   
+    { "name": "Soma",               "category": "primary",      "type": "weapons" , "rerolls": "1" },
+    { "name": "Burston",            "category": "primary",      "type": "weapons" , "rerolls": "1" },
+    { "name": "Braton",             "category": "primary",      "type": "weapons" , "rerolls": "1" },
+    { "name": "Scourge",            "category": "primary",      "type": "weapons" , "rerolls": "1" },
+    { "name": "Arca Plasmor",       "category": "primary",      "type": "weapons" , "rerolls": "1" },
+    { "name": "Ocucor",             "category": "secondary",    "type": "weapons" , "rerolls": "1" },
+    { "name": "Dual Tox",           "category": "secondary",    "type": "weapons" , "rerolls": "1" },
+    { "name": "Guandao",            "category": "melee",        "type": "weapons" , "rerolls": "1" },
+    { "name": "Creeping Bullseye",  "category": "secondary",    "type": "mods" ,     "rerolls": "1" },
+    { "name": "Magistar",           "category": "melee",        "type": "weapons" , "rerolls": "1" }
+
+  ]
