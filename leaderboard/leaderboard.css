@@ -1,0 +1,132 @@
+:root {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --accent: #6a3ec2;
+    --text: #f0f0f0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+}
+
+header {
+    background: #1c1c1c;
+    padding: 10px 20px;
+    border-bottom: 2px solid #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header button {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid #2a2a2a;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+header button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Main container */
+.leaderboard-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Category column */
+.category-column {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px; /* Added padding inside column */
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.category-column h2 {
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    color: var(--accent);
+}
+
+/* Entry box */
+.entry {
+    display: flex;
+    align-items: center; /* vertically center children */
+    padding: 8px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  
+  .rank {
+    flex: 0 0 10%;      /* fixed width for rank column */
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.8rem;   /* bigger for emphasis */
+    margin-right: 12px;  /* space between rank and content */
+  }
+  
+
+/* Rank colors */
+.rank.gold { color: gold; }
+.rank.silver { color: silver; }
+.rank.bronze { color: #cd7f32; }
+
+/* Entry content */
+.entry-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.player-line {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px; /* padding on right so time isn’t flush to edge */
+}
+
+.video-line a,
+.socials-line a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.video-line a:hover,
+.socials-line a:hover {
+    text-decoration: underline;
+}
+
+.socials-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.9rem;
+}
