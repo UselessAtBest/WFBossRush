@@ -1,0 +1,11 @@
+[
+    { "name": "Soma", "category": "body", "type": "body" },
+    { "name": "Burston", "category": "body", "type": "mods" },
+    { "name": "Braton", "category": "primary", "type": "weapons" },
+    { "name": "Scourge", "category": "primary", "type": "mods" },
+    { "name": "Arca Plasmor", "category": "secondary", "type": "weapons" },
+    { "name": "Ocucor", "category": "secondary", "type": "mods" },
+    { "name": "Dual Tox", "category": "melee", "type": "weapons" },
+    { "name": "Guandao", "category": "melee", "type": "mods" }
+  ]
+  

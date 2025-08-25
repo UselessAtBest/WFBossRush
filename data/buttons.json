@@ -1,0 +1,74 @@
+[
+    {
+      "id": "btn1",
+      "label": "Captain Vor",
+      "text": "You unlocked Seer & Cronus!",
+      "rolls": { "poolA": 1, "poolB": 2 }
+    },
+    {
+      "id": "btn2",
+      "label": "Boss 2",
+      "text": "You unlocked Weapon & Weapon!",
+      "rolls": { "poolA": 2, "poolB": 1 }
+    },
+    {
+        "id": "btn2",
+        "label": "Boss 3",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+      {
+        "id": "btn2",
+        "label": "Boss 4",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+      {
+        "id": "btn2",
+        "label": "Boss 5",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+      {
+        "id": "btn2",
+        "label": "Boss 6",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+      {
+        "id": "btn2",
+        "label": "Boss 7",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+      {
+        "id": "btn2",
+        "label": "Boss 6",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+     
+      {
+        "id": "btn2",
+        "label": "Boss 6",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+     
+      {
+        "id": "btn2",
+        "label": "Boss 6",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      },
+     
+      {
+        "id": "btn2",
+        "label": "Boss 6",
+        "text": "You unlocked Weapon & Weapon!",
+        "rolls": { "poolA": 2, "poolB": 1 }
+      }
+     
+
+  ]
+  
