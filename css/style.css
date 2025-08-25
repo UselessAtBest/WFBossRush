@@ -76,7 +76,7 @@
   
   /* ========= Top grid buttons ========= */
   .button-grid {
-    flex: 3;
+    flex: 8;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, auto));
     gap: 15px;
@@ -130,13 +130,18 @@
     background: var(--accent);
     border: none;
     color: white;
-    padding: 15px;
-    font-size: 1rem;
+    padding: 20px; /* increase vertical padding */
+    font-size: 1.2rem; /* make text larger */
+    line-height: 1.4; /* control spacing inside the button */
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.2s;
     position: relative;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center text */
+    align-items: center; /* horizontally center text */
+}
   
   .roll-buttons button:hover:not(:disabled) {
     background: #6541A5;
@@ -279,3 +284,35 @@
     background: #222;
   }
   
+
+  .inventory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .refund-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .refund-btn:hover {
+    background: #c0392b;
+  }
+  
+
+  .empty-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px; /* adjust as needed */
+    font-style: italic;
+    color: var(--muted);
+}
