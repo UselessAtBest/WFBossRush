@@ -2,9 +2,9 @@
   const container = document.getElementById("leaderboardContainer");
 
   const categoryFolders = [
-    { folder: "category1", displayName: "Normal Mode" },
-    { folder: "category2", displayName: "SP Hard Mode" },
-    { folder: "category3", displayName: "Sliv Mode" }
+    { folder: "/WFBossRush/leaderboard/category1", displayName: "Normal Mode" },
+    { folder: "/WFBossRush/leaderboard/category2", displayName: "SP Hard Mode" },
+    { folder: "/WFBossRush/leaderboard/category3", displayName: "Sliv Mode" }
   ];
 
   for (const cat of categoryFolders) {
@@ -83,3 +83,4 @@
     container.appendChild(column);
   }
 })();
+
