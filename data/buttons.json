@@ -1,108 +1,109 @@
 [
     {
         "id": "btn1",
-        "label": "Cheats",
+        "label": "The Fragmented One |SP Only|",
         "text": "You Have Cheated! Enjoy The Points!",
-        "rolls": { "poolNormal": 100, "poolLimited": 100 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       },
     {
       "id": "btn1",
       "label": "Captain Vor",
       "text": "You unlocked Seer & Cronus!",
-      "rolls": { "poolNormal": 1, "poolLimited": 2 }
+      "rolls": { "poolNormal": 3, "poolLimited": 1 }
     },
     {
       "id": "btn2",
       "label": "Jackal",
       "text": "You unlocked Weapon & Weapon!",
-      "rolls": { "poolNormal": 2, "poolLimited": 1 }
+      "rolls": { "poolNormal": 3, "poolLimited": 1 }
     },
     {
         "id": "btn2",
-        "label": "Captain Vor",
+        "label": "H-09 Efervon Tank |SP Only|",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       },
       {
         "id": "btn2",
         "label": "Lech Krill",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 3, "poolLimited": 1 }
       },
       {
         "id": "btn2",
         "label": "Lephantis",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       },
       {
         "id": "btn2",
         "label": "Seargeant",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 3, "poolLimited": 1 }
       },
       {
         "id": "btn2",
         "label": "Kril & Vor",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 3, "poolLimited": 1 }
       },
       {
         "id": "btn2",
         "label": "Zealoid Prelate",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       },
      
       {
         "id": "btn2",
         "label": "Salad V",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 4, "poolLimited": 2 }
       },
      
       {
         "id": "btn2",
         "label": "The Raptor",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 4, "poolLimited": 2 }
       },
      
       {
         "id": "btn2",
         "label": "Sargus Ruk",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 4, "poolLimited": 2 }
       },
            
       {
         "id": "btn2",
         "label": "Tyl Regor",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       },
            
       {
         "id": "btn2",
         "label": "Hyena Pack",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       },
            
       {
         "id": "btn2",
         "label": "Ambulas",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       },
 
       {
         "id": "btn2",
         "label": "Kela De Thaym",
         "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 2, "poolLimited": 1 }
+        "rolls": { "poolNormal": 5, "poolLimited": 3 }
       }
      
 
   ]
+
   
