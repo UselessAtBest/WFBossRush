@@ -415,6 +415,25 @@ header button:hover {
 }
 
 
+/* Buttons in header (Big/Small Pool) */
+.roll-header-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  margin-right: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.roll-header-btn:hover {
+  background: #6541A5; /* same hover as old bottom panel buttons */
+}
+
+
+
 
 
 #inventoryList::-webkit-scrollbar {
