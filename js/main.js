@@ -31,13 +31,13 @@ window.addEventListener("DOMContentLoaded", async () => {
     Inventory.init();
 
     // 4️⃣ Load intro HTML popup and show it
-    await UI.showIntroPopup("/data/intro.html");
+    await UI.showIntroPopup("/WFBossRush/data/intro.html");
 
     // 5️⃣ About button triggers the intro popup
     const aboutBtn = document.getElementById("aboutBtn");
     if (aboutBtn) {
       aboutBtn.addEventListener("click", () => {
-        UI.showIntroPopup("/data/intro.html");
+        UI.showIntroPopup("/WFBossRush/data/intro.html");
       });
     }
 
@@ -45,3 +45,4 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.error("Error initializing page:", err);
   }
 });
+
