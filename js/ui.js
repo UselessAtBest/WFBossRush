@@ -1,7 +1,7 @@
 // Define a global UI object
 const UI = {
   // ================= Intro Popup (on page load) =================
-  showIntroPopup: async function(filePath = "data/intro.html") {
+  showIntroPopup: async function(filePath = "/WFBossRush/data/intro.html") {
     const overlay = document.createElement("div");
     overlay.id = "introOverlay";
     overlay.className = "popup-overlay";
@@ -133,4 +133,5 @@ if (aboutBtn) {
   aboutBtn.addEventListener("click", () => {
     UI.showIntroPopup("/data/intro.html");
   });
+
 }
