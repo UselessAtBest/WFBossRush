@@ -2,6 +2,7 @@ const Inventory = (() => {
   let items = [];
   let currentCategory = "all";
   let currentSubtab = null; 
+  let previousItemsCount = 0; // Tracks already-rendered items for animation
 
   const subtabOptions = {
     warframe: ["warframe", "mods"],
@@ -12,6 +13,7 @@ const Inventory = (() => {
   };
 
   function init() {
+    // Main tabs
     document.querySelectorAll("#mainTabs button").forEach(btn => {
       btn.addEventListener("click", () => {
         currentCategory = "all";
@@ -23,6 +25,7 @@ const Inventory = (() => {
       });
     });
 
+    // Category tabs
     document.querySelectorAll("#categoryTabs button").forEach(btn => {
       btn.addEventListener("click", () => {
         currentCategory = btn.dataset.tab;
@@ -34,6 +37,7 @@ const Inventory = (() => {
       });
     });
 
+    // Default state
     setActive("#mainTabs", document.querySelector("#mainTabs button[data-tab='all']"));
     buildSubtabs();
     render();
@@ -73,33 +77,36 @@ const Inventory = (() => {
     if (!Array.isArray(item.type)) item.type = [item.type];
 
     items.push(item);
-    render();
+    render([item]); // Pass only the newly added item for animation
   }
 
   function refundItem(item) {
     items = items.filter(i => i !== item);
-  
+
     Randomizer.refundRoll(item);
-  
+
     const rerolled = Randomizer.rollPool(item.sourcePool, true);
-  
+
     if (rerolled) {
       const catText = rerolled.category?.map(c => capitalize(c)).join(" ") || "";
       const typeText = rerolled.type?.map(t => capitalize(t)).join(" ") || "";
-  
+
       const msg = `<p class="popup-title">You Rerolled:</p>
-                   <p><strong>${rerolled.name}</strong><br>
-                   ${catText} ${typeText}</p>`;
-      UI.showInfoPopup(msg); 
+                   <p><strong>${rerolled.name}</strong><br>${catText} ${typeText}</p>`;
+      UI.showInfoPopup(msg);
+      addItem(rerolled); // Add rerolled item to inventory with animation
     }
-  
+
     render();
   }
-  
 
-  function render() {
+  function render(newItems = []) {
     const list = document.getElementById("inventoryList");
-    list.innerHTML = "";
+
+    // Clear list only if rendering full inventory
+    if (newItems.length === 0) {
+      list.innerHTML = "";
+    }
 
     let filtered = [...items];
 
@@ -121,9 +128,14 @@ const Inventory = (() => {
       return;
     }
 
-    filtered.forEach(i => {
+    // Append only new items if provided
+    const itemsToRender = newItems.length ? newItems : filtered;
+    itemsToRender.forEach((i, index) => {
       const div = document.createElement("div");
       div.className = "inventory-item";
+      div.style.opacity = 0;
+      div.style.transform = "translateX(30px)";
+      div.style.transition = "all 0.4s ease";
 
       const shownCategory = i.displayCategory || i.category.join(", ").split(", ").map(capitalize).join(", ");
       const shownType = i.displayType || i.type.join(", ").split(", ").map(capitalize).join(", ");
@@ -144,7 +156,16 @@ const Inventory = (() => {
       div.appendChild(span);
       div.appendChild(btn);
       list.appendChild(div);
+
+      // Animate in with stagger
+      setTimeout(() => {
+        div.style.opacity = 1;
+        div.style.transform = "translateX(0)";
+      }, index * 100);
     });
+
+    // Update previous items count
+    previousItemsCount = list.children.length;
   }
 
   function capitalize(str) {
