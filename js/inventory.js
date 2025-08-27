@@ -81,17 +81,21 @@ const Inventory = (() => {
   
     Randomizer.refundRoll(item);
   
-    const rerolled = Randomizer.rollPool(item.sourcePool, true); 
+    const rerolled = Randomizer.rollPool(item.sourcePool, true);
   
     if (rerolled) {
+      const catText = rerolled.category?.map(c => capitalize(c)).join(" ") || "";
+      const typeText = rerolled.type?.map(t => capitalize(t)).join(" ") || "";
+  
       const msg = `<p class="popup-title">You Rerolled:</p>
                    <p><strong>${rerolled.name}</strong><br>
-                   ${rerolled.category?.map(c => Randomizer.capitalize(c)).join(", ") || ""}</p>`;
+                   ${catText} ${typeText}</p>`;
       UI.showInfoPopup(msg); 
     }
   
     render();
   }
+  
 
   function render() {
     const list = document.getElementById("inventoryList");
