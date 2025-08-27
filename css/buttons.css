@@ -1,4 +1,4 @@
-/* ================== Button Base Styles ================== */
+
 .button-grid button {
     display: flex;
     flex-direction: column;
@@ -19,32 +19,32 @@
     transform: scale(1.05);
   }
   
-  /* ================== Label Styles (inside button) ================== */
+
   .button-grid .tier-1-label {
     font-weight: bold;
     font-size: 1rem;
-    color: #ffd700; /* gold for tier 1 */
+    color: #ffd700; 
   }
   
   .button-grid .tier-2-label {
     font-weight: bold;
     font-size: 1rem;
-    color: #00bfff; /* deep sky blue for tier 2 */
+    color: #00bfff; 
   }
   
   .button-grid .tier-3-label {
     font-weight: bold;
     font-size: 1rem;
-    color: #ff6347; /* tomato/red for tier 3 */
+    color: #ff6347; 
   }
   
   .button-grid .tier-4-label {
     font-weight: bold;
     font-size: 1rem;
-    color: #32cd32; /* lime green for tier 4 */
+    color: #32cd32; 
   }
   
-  /* ================== Button Styles per Tier ================== */
+ 
   .button-grid .tier-1-btn {
     background-color: #402010;
     border-color: #ffd700;
@@ -65,7 +65,7 @@
     border-color: #32cd32;
   }
   
-  /* ================== Popup Text Styles per Tier ================== */
+
   .popup .tier-1-popup {
     color: #ffd700;
     font-weight: bold;
@@ -86,7 +86,7 @@
     font-weight: bold;
   }
   
-  /* Optional: small spacing between name and label in button */
+ 
   .button-grid .button-name {
     font-size: 0.9rem;
     color: #ccc;

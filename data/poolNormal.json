@@ -1,14 +1,23 @@
 [ 
 
 
-{ "name": "UNIVERSAL - SET MOD ROLLS"                    , "category": [""]                                   , "type": [""]       , "rerolls": "0"  },
+{ "name": "UNIVERSAL - SET MOD ROLLS"                    , "category": [""]         , "type": [""]       , "rerolls": "0"  },
 
-{ "name": "FREE PICK"                                    , "category": ["all"]                                , "type": ["all"]    , "rerolls": "1"  },
-{ "name": "Galvanized Mod"                               , "category": ["primary", "secondary","melee"]       , "type": ["mods"]   , "rerolls": "12" },
-{ "name": "Augur mods"                                   , "category": ["all"]                                , "type": ["mods"]   , "rerolls": "8"  },
-{ "name": "Gladiator mods"                               , "category": ["warframe", "melee"]                  , "type": ["mods"]   , "rerolls": "8"  },
-{ "name": "Vigilante mods"                               , "category": ["warframe", "primary"]                , "type": ["mods"]   , "rerolls": "8"  },
-{ "name": "Weapon Augment Mod"                           , "category": ["primary","secondary","melee"]        , "type": ["mods"]   , "rerolls": "8"  },
+{ "name": "FREE PICK"                                    , "category": ["all"]      , "type": ["none"]   , "rerolls": "1"  },
+{ "name": "Galvanized Mod"                               , "category": ["all"]      , "type": ["none"]   , "rerolls": "12" },
+{ "name": "Augur mods"                                   , "category": ["all"]      , "type": ["none"]   , "rerolls": "8"  },
+{ "name": "Gladiator mods"                               , "category": ["all"]      , "type": ["mods"]   , "rerolls": "8"  },
+{ "name": "Vigilante mods"                               , "category": ["all"]      , "type": ["none"]   , "rerolls": "8"  },
+{ "name": "Weapon Augment Mod"                           , "category": ["all"]      , "type": ["none"]   , "rerolls": "8"  },
+
+
+
+
+
+
+
+
+
 
 
 

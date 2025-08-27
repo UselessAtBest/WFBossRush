@@ -1,6 +1,32 @@
 (async () => {
   const container = document.getElementById("leaderboardContainer");
 
+
+
+  // ================= Theme toggle for leaderboard =================
+const toggle = document.getElementById("themeToggle");
+const root = document.documentElement;
+
+if (localStorage.getItem("theme") === "light") {
+  root.classList.add("light-mode");
+  toggle.textContent = "☀️";
+} else {
+  toggle.textContent = "🌙";
+}
+
+toggle.addEventListener("click", () => {
+  root.classList.toggle("light-mode");
+  if (root.classList.contains("light-mode")) {
+    toggle.textContent = "☀️";
+    localStorage.setItem("theme", "light");
+  } else {
+    toggle.textContent = "🌙";
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+
+
   // 1️⃣ Load the manifest with cache-busting
   let manifest;
   try {

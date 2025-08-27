@@ -1,8 +1,8 @@
 [
   {
     "name": "The Fragmented One",
-    "label": "<br> <br> <b> | SP Only | </b>",
-    "popupMessage": "You Have Cheated! Enjoy The Points!",
+    "label": "<br> <b> | SP Only | </b>",
+    "popupMessage": "",
     "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -14,7 +14,7 @@
   {
     "name": "Captain Vor",
     "label": "",
-    "popupMessage": "You unlocked Seer & Cronus!",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
@@ -26,7 +26,7 @@
   {
     "name": "Jackal",
     "label": "",
-    "popupMessage": "You unlocked Weapon & Weapon!",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
@@ -37,8 +37,8 @@
   },
   {
     "name": "H09 Efervon",
-    "label": "<br> <br>  <b> | SP Only | </b>",
-    "popupMessage": "This is a line of text.",
+    "label": "<br>  <b> | SP Only | </b>",
+    "popupMessage": "",
     "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -50,7 +50,7 @@
   {
     "name": "Lech Krill",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
@@ -62,7 +62,7 @@
   {
     "name": "Lephantis",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -74,7 +74,7 @@
   {
     "name": "Seargeant",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
@@ -86,7 +86,7 @@
   {
     "name": "Kril & Vor",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
@@ -98,7 +98,7 @@
   {
     "name": "Zealoid Prelate",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -110,7 +110,7 @@
   {
     "name": "Salad V",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
     "class": {
@@ -122,7 +122,7 @@
   {
     "name": "The Raptor",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
     "class": {
@@ -134,7 +134,7 @@
   {
     "name": "Sargus Ruk",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
     "class": {
@@ -146,7 +146,7 @@
   {
     "name": "Tyl Regor",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -158,7 +158,7 @@
   {
     "name": "Hyena Pack",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -170,7 +170,7 @@
   {
     "name": "Ambulas",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -182,7 +182,7 @@
   {
     "name": "Kela De Thaym",
     "label": "",
-    "popupMessage": "This is a line of text.",
+    "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {

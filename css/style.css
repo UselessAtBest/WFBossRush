@@ -10,7 +10,7 @@
 :root.light-mode {
   --bg: #ffffff;
   --card: #f3f3f3;
-  --accent: #0066cc;
+  --accent: #9172cf;
   --text: #111111;
   --muted: #666;
   --border: #cccccc;
@@ -30,7 +30,7 @@ body {
   height: 100vh;
 }
 
-/* ========= Header ========= */
+
 header {
   background: var(--card);
   padding: 10px 20px;
@@ -61,7 +61,7 @@ header button:hover {
   color: white;
 }
 
-/* ========= Layout ========= */
+
 .container {
   display: flex;
   flex: 1;
@@ -84,7 +84,7 @@ header button:hover {
   padding: 10px;
 }
 
-/* ========= Top grid buttons ========= */
+
 .button-grid {
   flex: 8;
   display: grid;
@@ -101,7 +101,7 @@ header button:hover {
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: center;
   transition: background 0.2s, opacity 0.2s, transform 0.1s;
   white-space: normal;
@@ -118,7 +118,6 @@ header button:hover {
   cursor: not-allowed;
 }
 
-/* ========= Bottom randomizer controls ========= */
 .randomizer-controls {
   flex: 1;
   padding: 15px;
@@ -163,7 +162,7 @@ header button:hover {
   cursor: not-allowed;
 }
 
-/* Roll counter displayed on button */
+
 .roll-buttons button .rolls {
   position: absolute;
   top: 4px;
@@ -173,10 +172,10 @@ header button:hover {
   color: white;
 }
 
-/* Small buttons */
+
 .roll-buttons .small-btn {
-  flex: 0 0 auto; 
-  width: 60px;    
+  flex: 0 0 auto;
+  width: 60px;
   padding: 5px 0;
   font-size: 30px;
   font-weight: bolder;
@@ -187,7 +186,7 @@ header button:hover {
   color: white;
 }
 
-/* ========= Inventory ========= */
+
 .inventory {
   display: flex;
   flex-direction: column;
@@ -271,31 +270,33 @@ header button:hover {
   color: var(--muted);
 }
 
-/* ========= Popup / About modal ========= */
+
 .popup-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* ignore clicks when hidden */
+  pointer-events: none;
 }
 
 .popup-overlay.show {
   opacity: 1;
-  pointer-events: auto; /* accept clicks when visible */
+  pointer-events: auto;
 }
 
 .popup {
   background: var(--card);
   padding: 20px;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 800px;
   text-align: center;
   border: 1px solid var(--border);
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
@@ -310,48 +311,112 @@ header button:hover {
 }
 
 
-/* Roll popup (small temporary info) */
-.roll-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--card);
+.multi-roll-popup {
+  background-color: var(--card);
   color: var(--text);
-  border: 1px solid var(--accent);
-  padding: 20px 30px;
-  border-radius: 12px;
+  border: 3px solid var(--accent);
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 400px;
+  text-align: left;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.multi-roll-popup .popup-content {
+  cursor: pointer; 
+}
+
+.multi-roll-popup ul {
+  list-style: disc inside;
+  padding-left: 10px;
+}
+
+.multi-roll-popup li {
+  margin-bottom: 5px;
+}
+
+.multi-roll-popup p {
+  margin: 5px 0;
+  font-style: italic;
   text-align: center;
-  font-size: 1.2rem;
-  z-index: 2000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-  opacity: 0.95;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.roll-popup.fade-out {
-  animation: fadeOut 0.5s forwards;
 }
 
 
-.video-container {
+.multi-roll-popup .popup-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.multi-roll-popup .roll-list li {
+  padding: 6px 0;
+}
+
+.multi-roll-popup .roll-separator {
+  border: 0;
+  border-top: 2px solid var(--accent);
+  margin: 10px 0;
+}
+
+.multi-roll-popup .click-to-close {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+  color: #3a3a3a; 
+  font-weight: bold;
+}
+
+
+
+.video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  max-width: 90vw; 
+  padding-bottom: 56.25%; 
   height: 0;
+  margin: 20px auto;
 }
 
-.video-container iframe {
+.video-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border: 0;
+}
+
+.popup.intro-popup {
+  max-width: 95vw;       
+  width: auto;
+  height: auto;
+  padding: 20px;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  text-align: center;
+}
+
+
+.popup-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.popup.intro-popup p,
+.popup.intro-popup ul {
+  word-wrap: break-word;
 }
 
 
 
-/* ========= Scrollbar Styling ========= */
+
 #inventoryList::-webkit-scrollbar {
   width: 8px;
 }
@@ -364,6 +429,7 @@ header button:hover {
 #inventoryList::-webkit-scrollbar-track {
   background: var(--card);
 }
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -60%); }

@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    // 1️⃣ Theme toggle setup
     const toggle = document.getElementById("themeToggle");
     const root = document.documentElement;
 
@@ -22,27 +21,33 @@ window.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    // 2️⃣ Load buttons.json and build grid
-    const buttonsData = await (await fetch("data/buttons.json")).json();
-    UI.buildButtonGrid(buttonsData);
-
-    // 3️⃣ Initialize randomizer and inventory
     await Randomizer.init();
     Inventory.init();
 
-    // 4️⃣ Load intro HTML popup and show it
-    await UI.showIntroPopup("/WFBossRush/data/intro.html");
+    const btnBig = document.getElementById("randomBtnA");
+    if (btnBig) btnBig.addEventListener("click", () => Randomizer.rollPool("A"));
 
-    // 5️⃣ About button triggers the intro popup
-    const aboutBtn = document.getElementById("aboutBtn");
-    if (aboutBtn) {
-      aboutBtn.addEventListener("click", () => {
-        UI.showIntroPopup("/WFBossRush/data/intro.html");
-      });
+    const btnSmall = document.getElementById("randomBtnB");
+    if (btnSmall) btnSmall.addEventListener("click", () => Randomizer.rollPool("B"));
+
+    const buttonsData = await (await fetch("data/buttons.json")).json();
+    UI.buildButtonGrid(buttonsData);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const skipIntro = urlParams.has("noIntro");
+
+    if (!skipIntro) {
+      await UI.showIntroPopup("data/intro.html");
     }
 
+    const aboutBtn = document.getElementById("aboutBtn");
+    if (aboutBtn) {
+      aboutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        UI.showIntroPopup("data/intro.html");
+      });
+    }
   } catch (err) {
     console.error("Error initializing page:", err);
   }
 });
-

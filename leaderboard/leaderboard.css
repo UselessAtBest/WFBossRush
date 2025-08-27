@@ -3,6 +3,7 @@
     --card: #1e1e1e;
     --accent: #6a3ec2;
     --text: #f0f0f0;
+    --border: #2a2a2a;
 }
 
 body {
@@ -12,10 +13,11 @@ body {
     margin: 0;
 }
 
+/* Header */
 header {
-    background: #1c1c1c;
+    background: var(--card);
     padding: 10px 20px;
-    border-bottom: 2px solid #2a2a2a;
+    border-bottom: 2px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,11 +31,11 @@ header h1 {
 header button {
     background: var(--card);
     color: var(--text);
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--border);
     padding: 8px 14px;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 header button:hover {
@@ -54,7 +56,7 @@ header button:hover {
 .category-column {
     background: var(--card);
     border-radius: 12px;
-    padding: 20px; /* Added padding inside column */
+    padding: 20px;
     flex: 1 1 300px;
     min-width: 280px;
     max-width: 350px;
@@ -67,7 +69,7 @@ header button:hover {
 .category-column h2 {
     text-align: center;
     margin-top: 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--border);
     padding-bottom: 10px;
     color: var(--accent);
 }
@@ -75,21 +77,21 @@ header button:hover {
 /* Entry box */
 .entry {
     display: flex;
-    align-items: center; /* vertically center children */
+    align-items: center;
     padding: 8px;
-    background: #1a1a1a;
+    background: var(--card);
     border-radius: 8px;
     font-size: 0.95rem;
-  }
-  
-  .rank {
-    flex: 0 0 10%;      /* fixed width for rank column */
+    border: 1px solid var(--border);
+}
+
+.rank {
+    flex: 0 0 10%;
     text-align: center;
     font-weight: bolder;
-    font-size: 1.8rem;   /* bigger for emphasis */
-    margin-right: 12px;  /* space between rank and content */
-  }
-  
+    font-size: 1.8rem;
+    margin-right: 12px;
+}
 
 /* Rank colors */
 .rank.gold { color: gold; }
@@ -109,7 +111,7 @@ header button:hover {
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    padding-right: 10px; /* padding on right so time isn’t flush to edge */
+    padding-right: 10px;
 }
 
 .video-line a,
@@ -129,4 +131,13 @@ header button:hover {
     flex-wrap: wrap;
     gap: 6px;
     font-size: 0.9rem;
+}
+
+/* Optional: smooth transition for theme switching */
+body,
+header,
+header button,
+.category-column,
+.entry {
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
 }

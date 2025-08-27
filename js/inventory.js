@@ -1,18 +1,17 @@
 const Inventory = (() => {
   let items = [];
   let currentCategory = "all";
-  let currentSubtab = null; // null = show all in the current category
+  let currentSubtab = null; 
 
   const subtabOptions = {
     warframe: ["warframe", "mods"],
     primary: ["weapons", "mods"],
     secondary: ["weapons", "mods"],
     melee: ["weapons", "mods"],
-    all: ["warframe", "weapons", "mods"] // default for All view
+    all: ["warframe", "weapons", "mods"] 
   };
 
   function init() {
-    // Main tab (All)
     document.querySelectorAll("#mainTabs button").forEach(btn => {
       btn.addEventListener("click", () => {
         currentCategory = "all";
@@ -24,7 +23,6 @@ const Inventory = (() => {
       });
     });
 
-    // Category tabs (2nd row)
     document.querySelectorAll("#categoryTabs button").forEach(btn => {
       btn.addEventListener("click", () => {
         currentCategory = btn.dataset.tab;
@@ -36,7 +34,6 @@ const Inventory = (() => {
       });
     });
 
-    // Default state
     setActive("#mainTabs", document.querySelector("#mainTabs button[data-tab='all']"));
     buildSubtabs();
     render();
@@ -58,8 +55,6 @@ const Inventory = (() => {
       });
       subtabContainer.appendChild(btn);
     });
-
-    // Default subtab
     currentSubtab = null;
     clearActive("#subTabs");
   }
@@ -74,7 +69,6 @@ const Inventory = (() => {
   }
 
   function addItem(item) {
-    // Ensure category and type are arrays
     if (!Array.isArray(item.category)) item.category = [item.category];
     if (!Array.isArray(item.type)) item.type = [item.type];
 
@@ -84,7 +78,18 @@ const Inventory = (() => {
 
   function refundItem(item) {
     items = items.filter(i => i !== item);
+  
     Randomizer.refundRoll(item);
+  
+    const rerolled = Randomizer.rollPool(item.sourcePool, true); 
+  
+    if (rerolled) {
+      const msg = `<p class="popup-title">You Rerolled:</p>
+                   <p><strong>${rerolled.name}</strong><br>
+                   ${rerolled.category?.map(c => Randomizer.capitalize(c)).join(", ") || ""}</p>`;
+      UI.showInfoPopup(msg); 
+    }
+  
     render();
   }
 
@@ -94,7 +99,6 @@ const Inventory = (() => {
 
     let filtered = [...items];
 
-    // Filter by main category if not "all"
     if (currentCategory !== "all") {
       filtered = filtered.filter(i =>
         i.category.map(c => c.toLowerCase()).includes(currentCategory) ||
@@ -102,7 +106,6 @@ const Inventory = (() => {
       );
     }
 
-    // Filter by subtab if a subtab is selected
     if (currentSubtab) {
       filtered = filtered.filter(i =>
         i.type.map(t => t.toLowerCase()).includes(currentSubtab)
