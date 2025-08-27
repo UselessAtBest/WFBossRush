@@ -7,7 +7,7 @@ const Randomizer = (() => {
     async function init() {
       poolNormal = await (await fetch("data/poolNormal.json")).json();
       poolLimited = await (await fetch("data/poolLimited.json")).json();
-  
+    
       // Attach remaining reroll counts to each item
       poolNormal.forEach(i => {
         if (i.rerolls === undefined) i.rerolls = Infinity; // default: unlimited
@@ -17,9 +17,18 @@ const Randomizer = (() => {
         if (i.rerolls === undefined) i.rerolls = Infinity;
         i._remaining = i.rerolls;
       });
-  
+    
+      // Roll buttons
       document.getElementById("randomBtnA").addEventListener("click", () => roll(poolNormal, "A"));
       document.getElementById("randomBtnB").addEventListener("click", () => roll(poolLimited, "B"));
+    
+      // ➕ Add roll buttons
+      document.getElementById("addBig").addEventListener("click", () => {
+        addRolls({ poolNormal: 1 });
+      });
+      document.getElementById("addSmall").addEventListener("click", () => {
+        addRolls({ poolLimited: 1 });
+      });
     }
   
     function addRolls({ poolNormal = 0, poolLimited = 0 }) {
@@ -44,8 +53,8 @@ const Randomizer = (() => {
     }
   
     function updateLabels() {
-      document.getElementById("randomBtnA").textContent = `🎲 Big Pool (${rollsA})`;
-      document.getElementById("randomBtnB").textContent = `🎲 Small Pool (${rollsB})`;
+      document.getElementById("randomBtnA").textContent = ` Big Pool (${rollsA})`;
+      document.getElementById("randomBtnB").textContent = ` Small Pool (${rollsB})`;
     }
   
     function roll(pool, type) {

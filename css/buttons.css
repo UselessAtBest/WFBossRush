@@ -1,0 +1,95 @@
+/* ================== Button Base Styles ================== */
+.button-grid button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  .button-grid button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ================== Label Styles (inside button) ================== */
+  .button-grid .tier-1-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ffd700; /* gold for tier 1 */
+  }
+  
+  .button-grid .tier-2-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #00bfff; /* deep sky blue for tier 2 */
+  }
+  
+  .button-grid .tier-3-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ff6347; /* tomato/red for tier 3 */
+  }
+  
+  .button-grid .tier-4-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #32cd32; /* lime green for tier 4 */
+  }
+  
+  /* ================== Button Styles per Tier ================== */
+  .button-grid .tier-1-btn {
+    background-color: #402010;
+    border-color: #ffd700;
+  }
+  
+  .button-grid .tier-2-btn {
+    background-color: #102040;
+    border-color: #00bfff;
+  }
+  
+  .button-grid .tier-3-btn {
+    background-color: #401020;
+    border-color: #ff6347;
+  }
+  
+  .button-grid .tier-4-btn {
+    background-color: #104020;
+    border-color: #32cd32;
+  }
+  
+  /* ================== Popup Text Styles per Tier ================== */
+  .popup .tier-1-popup {
+    color: #ffd700;
+    font-weight: bold;
+  }
+  
+  .popup .tier-2-popup {
+    color: #00bfff;
+    font-weight: bold;
+  }
+  
+  .popup .tier-3-popup {
+    color: #ff6347;
+    font-weight: bold;
+  }
+  
+  .popup .tier-4-popup {
+    color: #32cd32;
+    font-weight: bold;
+  }
+  
+  /* Optional: small spacing between name and label in button */
+  .button-grid .button-name {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 4px;
+  }
+  

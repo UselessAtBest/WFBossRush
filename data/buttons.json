@@ -1,109 +1,194 @@
 [
-    {
-        "id": "btn1",
-        "label": "The Fragmented One |SP Only|",
-        "text": "You Have Cheated! Enjoy The Points!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      },
-    {
-      "id": "btn1",
-      "label": "Captain Vor",
-      "text": "You unlocked Seer & Cronus!",
-      "rolls": { "poolNormal": 3, "poolLimited": 1 }
-    },
-    {
-      "id": "btn2",
-      "label": "Jackal",
-      "text": "You unlocked Weapon & Weapon!",
-      "rolls": { "poolNormal": 3, "poolLimited": 1 }
-    },
-    {
-        "id": "btn2",
-        "label": "H-09 Efervon Tank |SP Only|",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      },
-      {
-        "id": "btn2",
-        "label": "Lech Krill",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 3, "poolLimited": 1 }
-      },
-      {
-        "id": "btn2",
-        "label": "Lephantis",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      },
-      {
-        "id": "btn2",
-        "label": "Seargeant",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 3, "poolLimited": 1 }
-      },
-      {
-        "id": "btn2",
-        "label": "Kril & Vor",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 3, "poolLimited": 1 }
-      },
-      {
-        "id": "btn2",
-        "label": "Zealoid Prelate",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      },
-     
-      {
-        "id": "btn2",
-        "label": "Salad V",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 4, "poolLimited": 2 }
-      },
-     
-      {
-        "id": "btn2",
-        "label": "The Raptor",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 4, "poolLimited": 2 }
-      },
-     
-      {
-        "id": "btn2",
-        "label": "Sargus Ruk",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 4, "poolLimited": 2 }
-      },
-           
-      {
-        "id": "btn2",
-        "label": "Tyl Regor",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      },
-           
-      {
-        "id": "btn2",
-        "label": "Hyena Pack",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      },
-           
-      {
-        "id": "btn2",
-        "label": "Ambulas",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      },
-
-      {
-        "id": "btn2",
-        "label": "Kela De Thaym",
-        "text": "You unlocked Weapon & Weapon!",
-        "rolls": { "poolNormal": 5, "poolLimited": 3 }
-      }
-     
-
-  ]
-
-  
+  {
+    "name": "The Fragmented One",
+    "label": "<br> <br> <b> | SP Only | </b>",
+    "popupMessage": "You Have Cheated! Enjoy The Points!",
+    "tier": 1,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
+    }
+  },
+  {
+    "name": "Captain Vor",
+    "label": "",
+    "popupMessage": "You unlocked Seer & Cronus!",
+    "tier": 2,
+    "rolls": { "poolNormal": 3, "poolLimited": 1 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "Jackal",
+    "label": "",
+    "popupMessage": "You unlocked Weapon & Weapon!",
+    "tier": 2,
+    "rolls": { "poolNormal": 3, "poolLimited": 1 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "H09 Efervon",
+    "label": "<br> <br>  <b> | SP Only | </b>",
+    "popupMessage": "This is a line of text.",
+    "tier": 1,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
+    }
+  },
+  {
+    "name": "Lech Krill",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 2,
+    "rolls": { "poolNormal": 3, "poolLimited": 1 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "Lephantis",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 3,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-3-btn"],
+      "label": ["tier-3-label"],
+      "text": ["tier-3-popup"]
+    }
+  },
+  {
+    "name": "Seargeant",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 2,
+    "rolls": { "poolNormal": 3, "poolLimited": 1 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "Kril & Vor",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 2,
+    "rolls": { "poolNormal": 3, "poolLimited": 1 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "Zealoid Prelate",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 3,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-3-btn"],
+      "label": ["tier-3-label"],
+      "text": ["tier-3-popup"]
+    }
+  },
+  {
+    "name": "Salad V",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 2,
+    "rolls": { "poolNormal": 4, "poolLimited": 2 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "The Raptor",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 2,
+    "rolls": { "poolNormal": 4, "poolLimited": 2 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "Sargus Ruk",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 2,
+    "rolls": { "poolNormal": 4, "poolLimited": 2 },
+    "class": {
+      "button": ["tier-2-btn"],
+      "label": ["tier-2-label"],
+      "text": ["tier-2-popup"]
+    }
+  },
+  {
+    "name": "Tyl Regor",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 3,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-3-btn"],
+      "label": ["tier-3-label"],
+      "text": ["tier-3-popup"]
+    }
+  },
+  {
+    "name": "Hyena Pack",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 3,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-3-btn"],
+      "label": ["tier-3-label"],
+      "text": ["tier-3-popup"]
+    }
+  },
+  {
+    "name": "Ambulas",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 3,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-3-btn"],
+      "label": ["tier-3-label"],
+      "text": ["tier-3-popup"]
+    }
+  },
+  {
+    "name": "Kela De Thaym",
+    "label": "",
+    "popupMessage": "This is a line of text.",
+    "tier": 3,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-3-btn"],
+      "label": ["tier-3-label"],
+      "text": ["tier-3-popup"]
+    }
+  }
+]
