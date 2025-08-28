@@ -29,22 +29,21 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const btnSmall = document.getElementById("randomBtnB");
     if (btnSmall) btnSmall.addEventListener("click", () => Randomizer.rollPool("B"));
-    
-    // 🔹 Multi-roll button (rolls X from poolA and Y from poolB)
+
     const btnMulti = document.getElementById("multiRollBtn");
     if (btnMulti) {
       btnMulti.addEventListener("click", () => {
-        multiRoll(60 , 30); // Change 3,2 to how many rolls you want
+        multiRoll(60, 30); // Roll 60 from General Poll - Roll 30 from Boss Pool | SP BUTTON | 
       });
     }
 
     function multiRoll(countA, countB) {
       for (let i = 0; i < countA; i++) {
-        const itemA = Randomizer.rollPool("A", true);
+        const itemA = Randomizer.rollPool("A", false, true); 
         if (itemA) Inventory.addItem(itemA);
       }
       for (let j = 0; j < countB; j++) {
-        const itemB = Randomizer.rollPool("B", true);
+        const itemB = Randomizer.rollPool("B", false, true); 
         if (itemB) Inventory.addItem(itemB);
       }
     }

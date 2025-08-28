@@ -3,7 +3,6 @@
 
 
 
-  // ================= Theme toggle for leaderboard =================
 const toggle = document.getElementById("themeToggle");
 const root = document.documentElement;
 
@@ -27,7 +26,7 @@ toggle.addEventListener("click", () => {
 
 
 
-  // 1️⃣ Load the manifest with cache-busting
+
   let manifest;
   try {
     const timestamp = Date.now();
@@ -38,7 +37,6 @@ toggle.addEventListener("click", () => {
     return;
   }
 
-  // 2️⃣ Loop through categories
   for (const cat of manifest.categories) {
     const column = document.createElement("div");
     column.className = "category-column";
@@ -46,11 +44,10 @@ toggle.addEventListener("click", () => {
 
     const runs = [];
 
-    // 3️⃣ Load each run listed in the manifest for this category
     for (const runFile of cat.runs) {
       const filePath = `${cat.folder}/${runFile}`;
       try {
-        const timestamp = Date.now(); // cache-busting per file
+        const timestamp = Date.now(); 
         const res = await fetch(`${filePath}?_=${timestamp}`);
         if (!res.ok) continue;
         const data = await res.json();
@@ -60,26 +57,22 @@ toggle.addEventListener("click", () => {
       }
     }
 
-    // 4️⃣ Sort runs by time ascending
     runs.sort((a, b) => {
       const t1 = a.time.split("-").map(Number);
       const t2 = b.time.split("-").map(Number);
       return t1[0] * 60 + t1[1] - (t2[0] * 60 + t2[1]);
     });
 
-    // 5️⃣ Render each run
     runs.forEach((entry, idx) => {
       const div = document.createElement("div");
       div.className = "entry";
 
-      // Ranking classes
       let rankClass = "";
       const rankNumber = idx + 1;
       if (idx === 0) rankClass = "gold";
       else if (idx === 1) rankClass = "silver";
       else if (idx === 2) rankClass = "bronze";
 
-      // Player line
       const playerLine = entry.name
         ? `<div class="player-line">
              <span class="player-name">${entry.name}</span>
@@ -87,7 +80,6 @@ toggle.addEventListener("click", () => {
            </div>`
         : "";
 
-      // Video line
       const videoLine =
         entry.video && entry.video.toLowerCase() !== "n/a"
           ? `<div class="video-line">
@@ -95,7 +87,6 @@ toggle.addEventListener("click", () => {
              </div>`
           : "";
 
-      // Socials
       let socialLinksHTML = "";
       if (entry.socials) {
         socialLinksHTML = Object.keys(entry.socials)

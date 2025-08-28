@@ -4,7 +4,6 @@ const Randomizer = (() => {
   const globalItemsMap = new Map(); 
 
   async function init() {
-
     const normalData = await (await fetch("data/poolNormal.json")).json();
     const limitedData = await (await fetch("data/poolLimited.json")).json();
 
@@ -26,23 +25,19 @@ const Randomizer = (() => {
     if (globalItem) globalItem._remaining++;
   }
 
-  function rollPool(type, silent = false) {
+  function rollPool(type, addToInventory = true) {
     const pool = type === "A" ? poolNormal : poolLimited;
 
     const available = pool.filter(i => i._remaining > 0);
     if (available.length === 0) return null;
 
     const item = available[Math.floor(Math.random() * available.length)];
-
     item._remaining--;
 
     const rolledItem = { ...item, sourcePool: type };
-    Inventory.addItem(rolledItem);
 
-    if (!silent) {
-      const msg = `<strong>${rolledItem.name}</strong><br>${rolledItem.category?.map(c => capitalize(c)).join(", ") || ""}`;
-      UI.showInfoPopup(msg);
-    }
+    if (addToInventory) Inventory.addItem(rolledItem);
+
 
     return rolledItem;
   }

@@ -66,6 +66,9 @@
         <button onclick="window.location.href='/WFBossRush/leaderboard/leaderboard.html'">Leaderboard</button>
         <button onclick="window.location.href='/WFBossRush/data/pools.html'">Pools</button>
         </nav>
+        <div class="nav-right">
+          <button id="themeToggle">🌙</button>
+        </div>
       </header>
 
 
@@ -98,11 +101,9 @@
         console.error("Failed to load poolLimited.json:", err);
       }
 
-      // Remove "OLD" entries
       normalData = normalData.filter(item => !item.name.startsWith("OLD"));
       limitedData = limitedData.filter(item => !item.name.startsWith("OLD"));
 
-      // Sort by category
       normalData.sort((a, b) => (a.category[0] || "").localeCompare(b.category[0] || ""));
       limitedData.sort((a, b) => (a.category[0] || "").localeCompare(b.category[0] || ""));
 
@@ -144,5 +145,4 @@
   </script>
 </body>
 </html>
-
 

@@ -228,8 +228,8 @@ header button:hover {
 
 #inventoryList div {
   background: var(--card);
-  margin-bottom: 8px;  /* This adds vertical spacing between items */
-  padding: 0px;       /* This adds internal spacing inside each item */
+  margin-bottom: 4px;  
+  padding: 0px;       
   border-radius: 6px;
 }
 
@@ -237,7 +237,7 @@ header button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 0px;   /* Extra padding inside the flex container */
+  padding: 0px 0px;   
   border-bottom: 1px solid var(--border);
 }
 

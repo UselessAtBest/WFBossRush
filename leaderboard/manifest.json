@@ -15,7 +15,8 @@
         "folder": "category2",
         "displayName": "SP Hard Mode",
         "runs": [
-          "run01.json"
+          "run01.json",
+          "run02.json"
 
         ]
       },
@@ -23,7 +24,8 @@
         "folder": "category3",
         "displayName": "Sliv Mode",
         "runs": [
-          "run01.json"
+          "run01.json",
+          "run02.json"
         ]
       }
     ]

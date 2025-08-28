@@ -80,24 +80,22 @@ const Inventory = (() => {
 
   function refundItem(item) {
     items = items.filter(i => i._id !== item._id);
-
-    Randomizer.refundRoll(item);
+  
+    Randomizer.refundRoll(item, true); 
+  
     const rerolled = Randomizer.rollPool(item.sourcePool, true);
-
+  
     if (rerolled) {
-      if (!Array.isArray(rerolled.category)) rerolled.category = [rerolled.category];
-      if (!Array.isArray(rerolled.type)) rerolled.type = [rerolled.type];
-
       rerolled._id = crypto.randomUUID();
       items.push(rerolled);
-
+  
       const catText = rerolled.category.map(capitalize).join(" ");
       const typeText = rerolled.type.map(capitalize).join(" ");
       const msg = `<p class="popup-title">You Rerolled:</p>
                    <p><strong>${rerolled.name}</strong><br>${catText} ${typeText}</p>`;
       UI.showInfoPopup(msg);
     }
-
+  
     render();
   }
 
@@ -177,7 +175,7 @@ const Inventory = (() => {
       setTimeout(() => {
         div.style.opacity = 1;
         div.style.transform = "translateX(0)";
-      }, index * 50); // faster animation for larger inventories
+      }, index * 50); 
     });
   }
 
