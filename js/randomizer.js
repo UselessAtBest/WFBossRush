@@ -1,7 +1,7 @@
 const Randomizer = (() => {
   let poolNormal = [];
   let poolLimited = [];
-  const globalItemsMap = new Map(); 
+  const globalItemsMap = new Map();
 
   async function init() {
     const normalData = await (await fetch("data/poolNormal.json")).json();
@@ -23,6 +23,13 @@ const Randomizer = (() => {
   function refundRoll(item) {
     const globalItem = globalItemsMap.get(item.name.trim());
     if (globalItem) globalItem._remaining++;
+
+    // Show popup only for rerolls
+    const catText = item.category?.map(c => capitalize(c)).join(", ") || "";
+    const typeText = item.type?.map(t => capitalize(t)).join(", ") || "";
+    const msg = `<p class="popup-title">You Rerolled:</p>
+                 <p><strong>${item.name}</strong><br>${catText} ${typeText}</p>`;
+    UI.showInfoPopup(msg);
   }
 
   function rollPool(type, addToInventory = true) {
@@ -31,13 +38,25 @@ const Randomizer = (() => {
     const available = pool.filter(i => i._remaining > 0);
     if (available.length === 0) return null;
 
-    const item = available[Math.floor(Math.random() * available.length)];
-    item._remaining--;
+    // Weighted random selection
+    const totalWeight = available.reduce((sum, i) => sum + (i.weight ?? 1), 0);
+    let rand = Math.random() * totalWeight;
 
-    const rolledItem = { ...item, sourcePool: type };
+    let selectedItem;
+    for (let item of available) {
+      rand -= (item.weight ?? 1);
+      if (rand <= 0) {
+        selectedItem = item;
+        break;
+      }
+    }
+    if (!selectedItem) selectedItem = available[available.length - 1];
+
+    selectedItem._remaining--;
+
+    const rolledItem = { ...selectedItem, sourcePool: type };
 
     if (addToInventory) Inventory.addItem(rolledItem);
-
 
     return rolledItem;
   }
