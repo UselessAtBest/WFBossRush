@@ -103,67 +103,83 @@ const Inventory = (() => {
 
   function render(newItems = []) {
     const list = document.getElementById("inventoryList");
-  
-    // Only clear the list when doing a full render
+
     if (newItems.length === 0) {
       list.innerHTML = "";
     }
-  
+
     let filtered = [...items];
-  
+
     if (currentCategory !== "all") {
       filtered = filtered.filter(i =>
         i.category.map(c => c.toLowerCase()).includes(currentCategory) ||
         i.category.map(c => c.toLowerCase()).includes("all")
       );
     }
-  
+
     if (currentSubtab) {
       filtered = filtered.filter(i =>
         i.type.map(t => t.toLowerCase()).includes(currentSubtab)
       );
     }
-  
+
     const itemsToRender = newItems.length ? newItems : filtered;
-  
+
     itemsToRender.forEach((i, index) => {
       if (document.querySelector(`[data-id="${i._id}"]`)) return;
-  
+
       const div = document.createElement("div");
       div.className = "inventory-item";
       div.dataset.id = i._id;
       div.style.opacity = 0;
       div.style.transform = "translateX(30px)";
-      div.style.transition = "all 0.4s ease";
-  
+      div.style.transition = "all 0.15s ease";
+
+      const content = document.createElement("div");
+      content.className = "inventory-content";
+
       const shownCategory = i.displayCategory || i.category.join(", ").split(",").map(capitalize).join(", ");
       const shownType = i.displayType || i.type.join(",").split(",").map(capitalize).join(", ");
-  
+
       let details = shownCategory;
       if (!shownType.toLowerCase().includes(shownCategory.toLowerCase())) {
         details += `, ${shownType}`;
       }
-  
+
       const span = document.createElement("span");
       span.textContent = `${i.name} (${details})`;
-  
-      const btn = document.createElement("button");
-      btn.className = "refund-btn";
-      btn.textContent = "↩ Reroll";
-      btn.addEventListener("click", () => refundItem(i));
-  
-      div.appendChild(span);
-      div.appendChild(btn);
+      content.appendChild(span);
+
+      const btnContainer = document.createElement("div");
+      btnContainer.className = "inventory-btns";
+
+      const btnRefund = document.createElement("button");
+      btnRefund.className = "refund-btn";
+      btnRefund.textContent = "↩ Reroll";
+      btnRefund.addEventListener("click", () => refundItem(i));
+
+      const btnRemove = document.createElement("button");
+      btnRemove.className = "remove-btn";
+      btnRemove.textContent = "✖";
+      btnRemove.addEventListener("click", () => {
+        items = items.filter(x => x._id !== i._id);
+        Randomizer.refundRoll(i);
+        render();
+      });
+
+      btnContainer.appendChild(btnRefund);
+      btnContainer.appendChild(btnRemove);
+
+      content.appendChild(btnContainer);
+      div.appendChild(content);
       list.appendChild(div);
-  
-      // Animate only new items
+
       setTimeout(() => {
         div.style.opacity = 1;
         div.style.transform = "translateX(0)";
-      }, index * 100);
+      }, index * 50); // faster animation for larger inventories
     });
   }
-  
 
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -171,4 +187,3 @@ const Inventory = (() => {
 
   return { init, addItem };
 })();
-
