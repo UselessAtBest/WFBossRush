@@ -30,7 +30,6 @@ body {
   height: 100vh;
 }
 
-
 header {
   background: var(--card);
   padding: 10px 20px;
@@ -61,7 +60,6 @@ header button:hover {
   color: white;
 }
 
-
 .container {
   display: flex;
   flex: 1;
@@ -83,7 +81,6 @@ header button:hover {
   background: var(--card);
   padding: 10px;
 }
-
 
 .button-grid {
   flex: 8;
@@ -162,7 +159,6 @@ header button:hover {
   cursor: not-allowed;
 }
 
-
 .roll-buttons button .rolls {
   position: absolute;
   top: 4px;
@@ -171,7 +167,6 @@ header button:hover {
   font-weight: normal;
   color: white;
 }
-
 
 .roll-buttons .small-btn {
   flex: 0 0 auto;
@@ -185,7 +180,6 @@ header button:hover {
   background: var(--accent);
   color: white;
 }
-
 
 .inventory {
   display: flex;
@@ -210,7 +204,7 @@ header button:hover {
   background: var(--card);
   color: var(--text);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.1s;
 }
 
 .tabs button:hover,
@@ -234,8 +228,8 @@ header button:hover {
 
 #inventoryList div {
   background: var(--card);
-  margin-bottom: 8px;
-  padding: 10px;
+  margin-bottom: 8px;  /* This adds vertical spacing between items */
+  padding: 0px;       /* This adds internal spacing inside each item */
   border-radius: 6px;
 }
 
@@ -243,21 +237,51 @@ header button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px;
+  padding: 0px 0px;   /* Extra padding inside the flex container */
   border-bottom: 1px solid var(--border);
 }
 
+.inventory-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.inventory-btns {
+  display: flex;
+  gap: 5px;
+}
+
 .refund-btn {
-  background: #e74c3c;
+  background-color: #7844e0;
   color: white;
   border: none;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 3px 6px;
   cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  transition: background 0.2s;
 }
 
 .refund-btn:hover {
-  background: #c0392b;
+  background-color: #4d2a92;
+}
+
+.remove-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 3px 6px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+  margin-left: 6px;
+}
+
+.remove-btn:hover {
+  background-color: #d9363e;
 }
 
 .empty-message {
@@ -269,7 +293,6 @@ header button:hover {
   font-style: italic;
   color: var(--muted);
 }
-
 
 .popup-overlay {
   position: fixed;
@@ -310,7 +333,6 @@ header button:hover {
   opacity: 1;
 }
 
-
 .multi-roll-popup {
   background-color: var(--card);
   color: var(--text);
@@ -324,7 +346,7 @@ header button:hover {
 }
 
 .multi-roll-popup .popup-content {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .multi-roll-popup ul {
@@ -341,7 +363,6 @@ header button:hover {
   font-style: italic;
   text-align: center;
 }
-
 
 .multi-roll-popup .popup-title {
   font-size: 1.3rem;
@@ -363,17 +384,15 @@ header button:hover {
   text-align: center;
   margin-top: 10px;
   font-style: italic;
-  color: #3a3a3a; 
+  color: #3a3a3a;
   font-weight: bold;
 }
-
-
 
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 90vw; 
-  padding-bottom: 56.25%; 
+  max-width: 90vw;
+  padding-bottom: 56.25%;
   height: 0;
   margin: 20px auto;
 }
@@ -388,7 +407,7 @@ header button:hover {
 }
 
 .popup.intro-popup {
-  max-width: 95vw;       
+  max-width: 95vw;
   width: auto;
   height: auto;
   padding: 20px;
@@ -400,7 +419,6 @@ header button:hover {
   text-align: center;
 }
 
-
 .popup-overlay {
   display: flex;
   justify-content: center;
@@ -408,14 +426,11 @@ header button:hover {
   padding: 10px;
 }
 
-
 .popup.intro-popup p,
 .popup.intro-popup ul {
   word-wrap: break-word;
 }
 
-
-/* Buttons in header (Big/Small Pool) */
 .roll-header-btn {
   background: var(--accent);
   color: white;
@@ -429,11 +444,9 @@ header button:hover {
 }
 
 .roll-header-btn:hover {
-  background: #6541A5; /* same hover as old bottom panel buttons */
+  background: #6541A5;
 }
 
-
-/* Slide + fade animation for inventory items */
 @keyframes slideFadeIn {
   0% {
     opacity: 0;
@@ -446,12 +459,8 @@ header button:hover {
 }
 
 .inventory-item.animate {
-  animation: slideFadeIn 0.4s ease forwards;
+  animation: slideFadeIn 0.1s ease forwards;
 }
-
-
-
-
 
 #inventoryList::-webkit-scrollbar {
   width: 8px;
@@ -465,7 +474,6 @@ header button:hover {
 #inventoryList::-webkit-scrollbar-track {
   background: var(--card);
 }
-
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -60%); }
