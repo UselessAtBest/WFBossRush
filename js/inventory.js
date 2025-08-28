@@ -78,7 +78,6 @@ const Inventory = (() => {
     render([item]); 
   }
 
-
   function refundItem(item) {
     items = items.filter(i => i._id !== item._id);
 
@@ -124,11 +123,6 @@ const Inventory = (() => {
       );
     }
 
-    if (filtered.length === 0) {
-      list.innerHTML = '<div class="empty-message">No items yet.</div>';
-      return;
-    }
-
     const itemsToRender = newItems.length ? newItems : filtered;
 
     itemsToRender.forEach((i, index) => {
@@ -141,8 +135,8 @@ const Inventory = (() => {
       div.style.transform = "translateX(30px)";
       div.style.transition = "all 0.4s ease";
 
-      const shownCategory = i.displayCategory || i.category.join(", ").split(", ").map(capitalize).join(", ");
-      const shownType = i.displayType || i.type.join(", ").split(", ").map(capitalize).join(", ");
+      const shownCategory = i.displayCategory || i.category.join(", ").split(",").map(capitalize).join(", ");
+      const shownType = i.displayType || i.type.join(",").split(",").map(capitalize).join(", ");
 
       let details = shownCategory;
       if (!shownType.toLowerCase().includes(shownCategory.toLowerCase())) {
