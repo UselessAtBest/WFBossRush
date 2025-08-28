@@ -149,7 +149,7 @@ const Inventory = (() => {
   
       const btn = document.createElement("button");
       btn.className = "refund-btn";
-      btn.textContent = "↩ Refund";
+      btn.textContent = "↩ Reroll";
       btn.addEventListener("click", () => refundItem(i));
   
       div.appendChild(span);
@@ -171,3 +171,4 @@ const Inventory = (() => {
 
   return { init, addItem };
 })();
+
