@@ -110,6 +110,7 @@ header button:hover {
   transform: scale(1.05);
 }
 
+#buttonGrid button:disabled,
 .button-grid button:disabled {
   opacity: 0.4;
   cursor: not-allowed;

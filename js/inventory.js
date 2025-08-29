@@ -79,10 +79,12 @@ const Inventory = (() => {
   }
 
   function refundItem(item) {
+    // Remove old item
     items = items.filter(i => i._id !== item._id);
   
-    Randomizer.refundRoll(item, true); 
+    // Don't call Randomizer.refundRoll here, it shows a popup we don't want
   
+    // Roll new item
     const rerolled = Randomizer.rollPool(item.sourcePool, true);
   
     if (rerolled) {
@@ -98,6 +100,7 @@ const Inventory = (() => {
   
     render();
   }
+  
 
   function render(newItems = []) {
     const list = document.getElementById("inventoryList");
@@ -161,7 +164,7 @@ const Inventory = (() => {
       btnRemove.textContent = "✖";
       btnRemove.addEventListener("click", () => {
         items = items.filter(x => x._id !== i._id);
-        Randomizer.refundRoll(i);
+        // Don't call Randomizer.refundRoll here either
         render();
       });
 

@@ -9,7 +9,8 @@
       "button": ["tier-1-btn"],
       "label": ["tier-1-label"],
       "text": ["tier-1-popup"]
-    }
+    },
+    "sp": true
   },
   {
     "name": "Captain Vor",
@@ -45,7 +46,8 @@
       "button": ["tier-1-btn"],
       "label": ["tier-1-label"],
       "text": ["tier-1-popup"]
-    }
+    },
+    "sp": true
   },
   {
     "name": "Lech Krill",
