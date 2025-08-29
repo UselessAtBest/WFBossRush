@@ -14,7 +14,7 @@
   },
   {
     "name": "Captain Vor",
-    "label": "",
+    "label": "<small> Mercury </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
@@ -26,7 +26,7 @@
   },
   {
     "name": "Jackal",
-    "label": "",
+    "label": "<small> Venus </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
@@ -51,7 +51,7 @@
   },
   {
     "name": "Lech Krill",
-    "label": "",
+    "label": "<small> Mars  </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
@@ -63,7 +63,7 @@
   },
   {
     "name": "Lephantis",
-    "label": "",
+    "label": "<small> Deimos </small>",
     "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
@@ -75,7 +75,7 @@
   },
   {
     "name": "Seargeant",
-    "label": "",
+    "label": "<small> Phobos </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
@@ -87,7 +87,7 @@
   },
   {
     "name": "Kril & Vor",
-    "label": "",
+    "label": "<small> Ceres </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
@@ -99,7 +99,7 @@
   },
   {
     "name": "Zealoid Prelate",
-    "label": "",
+    "label": "<small> Deimos </small>",
     "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
@@ -111,7 +111,7 @@
   },
   {
     "name": "Salad V",
-    "label": "",
+    "label": "<small> Jupiter </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
@@ -123,7 +123,7 @@
   },
   {
     "name": "The Raptor",
-    "label": "",
+    "label": "<small> Europa </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
@@ -135,7 +135,7 @@
   },
   {
     "name": "Sargus Ruk",
-    "label": "",
+    "label": "<small> Saturn </small>",
     "popupMessage": "",
     "tier": 2,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
@@ -147,7 +147,7 @@
   },
   {
     "name": "Tyl Regor",
-    "label": "",
+    "label": "<small> Uranus </small>",
     "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
@@ -159,7 +159,7 @@
   },
   {
     "name": "Hyena Pack",
-    "label": "",
+    "label": "<small> Neptune </small>",
     "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
@@ -171,7 +171,7 @@
   },
   {
     "name": "Ambulas",
-    "label": "",
+    "label": "<small> Pluto </small>",
     "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
@@ -183,7 +183,7 @@
   },
   {
     "name": "Kela De Thaym",
-    "label": "",
+    "label": "<small> Sedna </small>",
     "popupMessage": "",
     "tier": 3,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
