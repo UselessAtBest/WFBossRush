@@ -94,6 +94,15 @@ window.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
+        // Faq button
+        const faqBtn = document.getElementById("faqBtn");
+        if (faqBtn) {
+          faqBtn.addEventListener("click", e => {
+            e.preventDefault();
+            UI.showIntroPopup("data/faq.html");
+          });
+        }
+
   } catch (err) {
     console.error("Error initializing page:", err);
   }
