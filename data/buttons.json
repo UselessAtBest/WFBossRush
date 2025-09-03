@@ -74,7 +74,7 @@
     }
   },
   {
-    "name": "Seargeant",
+    "name": "The Sergeant",
     "label": "<small> Phobos </small>",
     "popupMessage": "",
     "tier": 2,
@@ -95,18 +95,6 @@
       "button": ["tier-2-btn"],
       "label": ["tier-2-label"],
       "text": ["tier-2-popup"]
-    }
-  },
-  {
-    "name": "Zealoid Prelate",
-    "label": "<small> Deimos </small>",
-    "popupMessage": "",
-    "tier": 3,
-    "rolls": { "poolNormal": 5, "poolLimited": 3 },
-    "class": {
-      "button": ["tier-3-btn"],
-      "label": ["tier-3-label"],
-      "text": ["tier-3-popup"]
     }
   },
   {
@@ -191,6 +179,19 @@
       "button": ["tier-3-btn"],
       "label": ["tier-3-label"],
       "text": ["tier-3-popup"]
+    },
+  {
+    "name": "Zealoid Prelate",
+    "label": "<small> Deimos </small>",
+    "popupMessage": "",
+    "tier": 3,
+    "rolls": { "poolNormal": 5, "poolLimited": 3 },
+    "class": {
+      "button": ["tier-3-btn"],
+      "label": ["tier-3-label"],
+      "text": ["tier-3-popup"]
     }
   }
+  }
 ]
+
