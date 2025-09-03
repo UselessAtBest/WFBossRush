@@ -103,7 +103,17 @@ window.addEventListener("DOMContentLoaded", async () => {
           });
         }
 
+        // How To button
+        const howBtn = document.getElementById("howBtn");
+        if (howBtn) {
+          howBtn.addEventListener("click", e => {
+            e.preventDefault();
+            UI.showIntroPopup("data/howto.html");
+          });
+        }
+
   } catch (err) {
     console.error("Error initializing page:", err);
   }
 });
+
