@@ -179,7 +179,8 @@
       "button": ["tier-3-btn"],
       "label": ["tier-3-label"],
       "text": ["tier-3-popup"]
-    },
+    }
+  },
   {
     "name": "Zealoid Prelate",
     "label": "<small> Deimos </small>",
@@ -191,7 +192,6 @@
       "label": ["tier-3-label"],
       "text": ["tier-3-popup"]
     }
-  }
   }
 ]
 
