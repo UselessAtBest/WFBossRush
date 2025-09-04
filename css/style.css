@@ -1,4 +1,4 @@
-:root {
+:root.dark-mode {
   --bg: #070421;
   --card: #070421;
   --accent: #FA789F;
@@ -18,7 +18,7 @@
 
 }
 
-:root.dark-mode {
+:root {
   --bg: #121212;
   --card: #1e1e1e;
   --accent: #401D87;
@@ -107,6 +107,12 @@ header button {
 #themeToggle:hover {
   background-color: var(--themebuttonhover);
   color: #fff;
+}
+
+
+.resetbtn {
+  background-color: red;
+  border-color: black;
 }
 
 
@@ -348,7 +354,7 @@ header button:hover {
   text-align: center;
   height: 50px;
   font-style: italic;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .popup-overlay {
@@ -574,4 +580,3 @@ header button:hover {
   from { opacity: 0.95; transform: translate(-50%, -50%); }
   to { opacity: 0; transform: translate(-50%, -40%); }
 }
-
