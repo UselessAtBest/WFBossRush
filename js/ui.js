@@ -27,26 +27,31 @@ const UI = {
 
   // --- Reset All ---
   resetAll(buttonsData) {
-  // Clear inventory
-  Inventory.clear();
+    // Clear inventory
+    Inventory.clear();
 
-  // Reset all button data
-  buttonsData.forEach(btn => {
-    btn.used = false;
-    if (btn.sp) btn.disabled = false; // re-enable SP buttons
-  });
+    // Reset all button data
+    buttonsData.forEach(btn => {
+      btn.used = false;
+      if (btn.sp) btn.disabled = true; // SP buttons reset to disabled
+    });
 
-  // Save button states
-  this.saveButtonState(buttonsData);
+    // Save button states
+    this.saveButtonState(buttonsData);
 
-  // Rebuild button grid
-  this.buildButtonGrid(buttonsData);
+    // Rebuild button grid
+    this.buildButtonGrid(buttonsData);
 
-  // Re-enable the multi-roll button if it exists
-  const multiRollBtn = document.getElementById("multiRollBtn");
-  if (multiRollBtn) multiRollBtn.disabled = false;
-},
+    // Re-enable the multi-roll button if it exists
+    const multiRollBtn = document.getElementById("multiRollBtn");
+    if (multiRollBtn) multiRollBtn.disabled = false;
+  },
 
+  bindResetButton(buttonsData) {
+    const resetBtn = document.getElementById("resetBtn");
+    if (!resetBtn) return;
+    resetBtn.addEventListener("click", () => this.resetAll(buttonsData));
+  },
 
   // --- Popups ---
   showIntroPopup: async function(filePath = "data/intro.html", afterLoad) {
@@ -126,10 +131,12 @@ const UI = {
 
     this.loadButtonState(buttonsData);
 
-    buttonsData.forEach((btnData, index) => {
+    buttonsData.forEach((btnData) => {
       const btn = document.createElement("button");
-      btn.disabled = btnData.sp || btnData.used || false;
+      // SP buttons start disabled unless used
+      btn.disabled = btnData.sp && !btnData.used ? true : btnData.used || false;
       if (btnData.sp) btn.dataset.sp = "true";
+      if (btnData.id) btn.id = btnData.id;
 
       if (btnData.image) {
         const img = document.createElement("img");
@@ -150,47 +157,69 @@ const UI = {
 
       btn.classList.add(`tier-${btnData.tier || 1}-btn`);
 
-      btn.addEventListener("click", () => {
-        if (btn.disabled) return;
-        btn.disabled = true;
-        btnData.used = true;
+btn.addEventListener("click", () => {
+  if (btn.disabled) return;
 
-        // --- SP button: multi-roll silently ---
-        if (btnData.sp) {
-          const countA = btnData.rolls?.poolNormal || 0;
-          const countB = btnData.rolls?.poolLimited || 0;
-          for (let i = 0; i < countA; i++) {
-            const item = Randomizer.rollPool("A", true);
-            if (item) Inventory.addItem(item);
-          }
-          for (let i = 0; i < countB; i++) {
-            const item = Randomizer.rollPool("B", true);
-            if (item) Inventory.addItem(item);
-          }
-          this.saveInventory();
-          this.saveButtonState(buttonsData);
-          return; // no popup
-        }
+  btnData.used = true;
 
-        // --- Normal button: show popup ---
-        const rolledItems = [];
-        for (let i = 0; i < (btnData.rolls?.poolNormal || 0); i++) {
-          const item = Randomizer.rollPool("A", true);
-          if (item) rolledItems.push(item);
-        }
-        for (let i = 0; i < (btnData.rolls?.poolLimited || 0); i++) {
-          const item = Randomizer.rollPool("B", true);
-          if (item) rolledItems.push(item);
-        }
+  // Roll items
+  const rolledItems = [];
+  for (let i = 0; i < (btnData.rolls?.poolNormal || 0); i++) {
+    const item = Randomizer.rollPool("A", true);
+    if (item) rolledItems.push(item);
+  }
+  for (let i = 0; i < (btnData.rolls?.poolLimited || 0); i++) {
+    const item = Randomizer.rollPool("B", true);
+    if (item) rolledItems.push(item);
+  }
 
-        rolledItems.forEach(item => Inventory.addItem(item));
-        this.saveInventory();
-        this.saveButtonState(buttonsData);
-        this.showRollPopup(btnData, rolledItems);
-      });
+  rolledItems.forEach(item => Inventory.addItem(item));
+  this.saveInventory();
+  this.saveButtonState(buttonsData);
+
+  // Show popup first
+  this.showRollPopup(btnData, rolledItems);
+
+  // Then disable the button
+  btn.disabled = true;
+});
+
 
       grid.appendChild(btn);
     });
+  },
+
+  // --- Multi-roll SP button ---
+  multiRollSP(buttonsData, countA, countB, multiBtnId) {
+    const spButtons = buttonsData.filter(b => b.sp);
+    const rolledItems = [];
+
+    spButtons.forEach(btnData => {
+      const normalRolls = btnData.rolls?.poolNormal || 0;
+      for (let i = 0; i < normalRolls; i++) {
+        const item = Randomizer.rollPool("A", true);
+        if (item) rolledItems.push(item);
+      }
+      const limitedRolls = btnData.rolls?.poolLimited || 0;
+      for (let i = 0; i < limitedRolls; i++) {
+        const item = Randomizer.rollPool("B", true);
+        if (item) rolledItems.push(item);
+      }
+
+      // Enable SP button after multi-roll
+      const btn = document.getElementById(btnData.id);
+      if (btn) btn.disabled = false;
+    });
+
+    rolledItems.forEach(item => Inventory.addItem(item));
+    this.saveInventory();
+    this.saveButtonState(buttonsData);
+
+    // Disable multi-roll button until reset
+    if (multiBtnId) {
+      const multiBtn = document.getElementById(multiBtnId);
+      if (multiBtn) multiBtn.disabled = true;
+    }
   },
 
   // --- Roll popup ---

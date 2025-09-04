@@ -71,28 +71,28 @@ window.addEventListener("DOMContentLoaded", async () => {
 const btnMulti = document.getElementById("multiRollBtn");
 if (btnMulti) {
   btnMulti.addEventListener("click", () => {
-    // Perform multi-roll silently
+    // Perform the multi-roll exactly as before
     multiRoll(60, 30);
 
-    // Disable the multi-roll button until reset
+    // Disable multi-roll button until reset
     btnMulti.disabled = true;
 
-    // Re-enable all SP buttons in the grid
+    // Enable SP buttons in the grid so they can be clicked and show popups
     const grid = document.getElementById("buttonGrid");
     const spButtons = grid.querySelectorAll("button[data-sp='true']");
-    spButtons.forEach(btn => btn.disabled = false);
+    spButtons.forEach(btn => {
+      // Only enable if not already used
+      if (!btn.dataset.used || btn.dataset.used === "false") btn.disabled = false;
+    });
 
-    // Update button states in localStorage
-    const buttonsData = JSON.parse(localStorage.getItem("buttonsUsed")) || [];
-    // Optional: mark multiRollBtn itself in your buttonsData if needed
-    localStorage.setItem("buttonsUsed", JSON.stringify(buttonsData));
-
-    // No popup for this multi-roll
+    // No need to save button states here; UI.buildButtonGrid click listeners handle it
   });
-}
+};
+
 
 
     const buttonsData = await (await fetch("data/buttons.json")).json();
+    window.buttonsData = buttonsData; // <-- expose globally
     UI.buildButtonGrid(buttonsData);
 
     // Bind Reset All button
@@ -125,6 +125,7 @@ if (btnMulti) {
       UI.showIntroPopup("data/howto.html", attachPopupLinks);
     });
 
+
     function attachPopupLinks(popup) {
       try {
         const themeLink = popup.querySelector("#themeLink");
@@ -142,4 +143,30 @@ if (btnMulti) {
   } catch (err) {
     console.error("Error initializing page:", err);
   }
+
+
+  const resetBtnpopup = document.getElementById("resetBtnpopup");
+if (resetBtnpopup) resetBtnpopup.addEventListener("click", e => {
+  e.preventDefault();
+  UI.showIntroPopup("data/reset.html", popup => {
+    // Attach button listeners AFTER popup is loaded
+    const closeBtn = popup.querySelector("#closePopupBtn");
+    const resetBtn = popup.querySelector("#confirmResetBtn");
+
+    if (closeBtn) closeBtn.addEventListener("click", () => {
+      const overlay = popup.parentElement; // the overlay div
+      if (overlay) overlay.remove();
+    });
+
+    if (resetBtn) resetBtn.addEventListener("click", () => {
+      if (window.buttonsData) {
+        UI.resetAll(window.buttonsData);
+      }
+      const overlay = popup.parentElement;
+      if (overlay) overlay.remove();
+    });
+  });
+});
+
+
 });
