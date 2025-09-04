@@ -1,8 +1,7 @@
 const Inventory = {
   items: [],
 
-  // Initialize inventory from localStorage
-  init: function() {
+  init: function () {
     const saved = localStorage.getItem("inventory");
     if (saved) {
       try {
@@ -17,8 +16,7 @@ const Inventory = {
     this.render();
   },
 
-  // Save current inventory to localStorage
-  save: function() {
+  save: function () {
     try {
       localStorage.setItem("inventory", JSON.stringify(this.items));
     } catch (err) {
@@ -26,12 +24,13 @@ const Inventory = {
     }
   },
 
-  // Add a new item
-  addItem: function(item) {
+
+  addItem: function (item) {
     if (!item || !item.name) return;
 
-    // Prevent duplicates
-    const exists = this.items.find(i => i.name === item.name && i.sourcePool === item.sourcePool);
+    const exists = this.items.find(
+      (i) => i.name === item.name && i.sourcePool === item.sourcePool
+    );
     if (exists) return;
 
     this.items.push(item);
@@ -39,31 +38,68 @@ const Inventory = {
     this.render();
   },
 
-  // Remove an item by index
-  removeItem: function(index) {
+
+  removeItem: function (index) {
     if (index < 0 || index >= this.items.length) return;
     this.items.splice(index, 1);
     this.save();
     this.render();
   },
 
-  // Refund / re-enable an item (optional)
-  refundItem: function(index) {
+
+  rerollItem: function (index) {
     if (index < 0 || index >= this.items.length) return;
-    this.items.splice(index, 1); // remove refunded item
+
+    const original = this.items[index];
+    const sourcePool = original?.sourcePool || "A"; 
+    this.items.splice(index, 1);
     this.save();
     this.render();
+
+    let newItem = null;
+    try {
+      newItem = Randomizer.rollPool(sourcePool, true);
+    } catch (err) {
+      console.error("Reroll failed:", err);
+    }
+
+    if (newItem) {
+      this.addItem(newItem);
+
+      const cat =
+        Array.isArray(newItem.category)
+          ? newItem.category.join(", ")
+          : (newItem.category || "");
+      const type =
+        Array.isArray(newItem.type)
+          ? newItem.type.join(", ")
+          : (newItem.type || "");
+
+      const title =
+        sourcePool === "B" ? "Rerolled (Boss Pool)" : "Rerolled (General Pool)";
+      const html = `
+        <p class="popup-title">${title}</p>
+        <p><strong>${newItem.name}</strong><br>${cat} ${type}</p>
+      `;
+      if (typeof UI?.showInfoPopup === "function") {
+        UI.showInfoPopup(html);
+      }
+    } else {
+      if (typeof UI?.showInfoPopup === "function") {
+        UI.showInfoPopup(
+          `<p class="popup-title">Reroll</p><p>No item available from pool ${sourcePool}.</p>`
+        );
+      }
+    }
   },
 
-  // Clear all inventory
-  clear: function() {
+  clear: function () {
     this.items = [];
     this.save();
     this.render();
   },
 
-  // Render the inventory DOM
-  render: function() {
+  render: function () {
     const list = document.getElementById("inventoryList");
     if (!list) return;
 
@@ -80,16 +116,20 @@ const Inventory = {
 
       const content = document.createElement("div");
       content.className = "inventory-content";
-      content.innerHTML = `<span>${item.name} (${item.category || "N/A"})</span>`;
+
+      const catText = Array.isArray(item.category)
+        ? item.category.join(", ")
+        : (item.category || "N/A");
+      content.innerHTML = `<span>${item.name} (${catText})</span>`;
 
       const buttons = document.createElement("div");
       buttons.className = "inventory-btns";
 
-      const refundBtn = document.createElement("button");
-      refundBtn.className = "refund-btn";
-      refundBtn.textContent = "↺";
-      refundBtn.title = "Refund / Remove item";
-      refundBtn.addEventListener("click", () => this.refundItem(index));
+      const rerollBtn = document.createElement("button");
+      rerollBtn.className = "refund-btn reroll-btn";
+      rerollBtn.textContent = "↺";
+      rerollBtn.title = "Reroll (remove this item and get a new one from the same pool)";
+      rerollBtn.addEventListener("click", () => this.rerollItem(index));
 
       const removeBtn = document.createElement("button");
       removeBtn.className = "remove-btn";
@@ -97,7 +137,7 @@ const Inventory = {
       removeBtn.title = "Remove item";
       removeBtn.addEventListener("click", () => this.removeItem(index));
 
-      buttons.appendChild(refundBtn);
+      buttons.appendChild(rerollBtn);
       buttons.appendChild(removeBtn);
 
       content.appendChild(buttons);
