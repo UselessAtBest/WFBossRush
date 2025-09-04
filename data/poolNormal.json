@@ -879,7 +879,7 @@
 {"name": "Zenistar",                "category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Dorrclave",               "category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Dual Cleavers",           "category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},
-{"name": "Dual Ether", "            category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},
+{"name": "Dual Ether",              "category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Dual Heat Swords",        "category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Dual Ichor",              "category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Dual Kamas",              "category": ["melee"], "type": ["weapons"], "rerolls": "1", "weight": 1},

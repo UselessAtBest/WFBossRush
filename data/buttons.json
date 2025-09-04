@@ -1,8 +1,9 @@
 [
   {
-    "name": "The Fragmented One",
-    "label": "<br> <b> | SP Only | </b>",
+    "name": "Fragmented One",
+    "label": "<b> SP Only  </b>",
     "popupMessage": "",
+    "image": "/img/fragmentedone.png",
     "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -14,32 +15,35 @@
   },
   {
     "name": "Captain Vor",
-    "label": "<small> Mercury </small>",
+    "label": " Mercury ",
     "popupMessage": "",
-    "tier": 2,
+    "image": "/img/vor.png",
+    "tier": 1,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
-    "name": "Jackal",
-    "label": "<small> Venus </small>",
+    "name": "The Jackal",
+    "label": " Venus ",
     "popupMessage": "",
-    "tier": 2,
+    "image": "/img/jackal.png",
+    "tier": 1,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "H09 Efervon",
-    "label": "<br>  <b> | SP Only | </b>",
+    "label": " <b>  SP Only </b>",
     "popupMessage": "",
+    "image": "/img/h09.png",
     "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -50,148 +54,159 @@
     "sp": true
   },
   {
-    "name": "Lech Krill",
-    "label": "<small> Mars  </small>",
-    "popupMessage": "",
-    "tier": 2,
+    "name": "Lech Kril",
+    "label": "Mars",
+    "popupMessage": "Big Beans",
+    "image": "/img/Kril.png",
+    "tier": 1,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Lephantis",
-    "label": "<small> Deimos </small>",
+    "label": " Deimos ",
     "popupMessage": "",
-    "tier": 3,
+    "image": "/img/lephantis.png",
+    "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
-      "button": ["tier-3-btn"],
-      "label": ["tier-3-label"],
-      "text": ["tier-3-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "The Sergeant",
-    "label": "<small> Phobos </small>",
+    "label": " Phobos ",
     "popupMessage": "",
-    "tier": 2,
+    "image": "/img/sergeant.png",
+    "tier": 1,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Kril & Vor",
-    "label": "<small> Ceres </small>",
+    "label": " Ceres ",
     "popupMessage": "",
-    "tier": 2,
+    "image": "/img/VorKril.png",
+    "tier": 1,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Salad V",
-    "label": "<small> Jupiter </small>",
+    "label": " Jupiter ",
     "popupMessage": "",
-    "tier": 2,
+    "image": "/img/aladv.png",
+    "tier": 1,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "The Raptor",
-    "label": "<small> Europa </small>",
+    "label": " Europa ",
     "popupMessage": "",
-    "tier": 2,
+    "image": "/img/raptor.png",
+    "tier": 1,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Sargus Ruk",
-    "label": "<small> Saturn </small>",
+    "label": " Saturn ",
     "popupMessage": "",
-    "tier": 2,
+    "image": "/img/ruk.png",
+    "tier": 1,
     "rolls": { "poolNormal": 4, "poolLimited": 2 },
     "class": {
-      "button": ["tier-2-btn"],
-      "label": ["tier-2-label"],
-      "text": ["tier-2-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Tyl Regor",
-    "label": "<small> Uranus </small>",
+    "label": " Uranus ",
     "popupMessage": "",
-    "tier": 3,
+    "image": "/img/regor.png",
+    "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
-      "button": ["tier-3-btn"],
-      "label": ["tier-3-label"],
-      "text": ["tier-3-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Hyena Pack",
-    "label": "<small> Neptune </small>",
+    "label": " Neptune ",
     "popupMessage": "",
-    "tier": 3,
+    "image": "/img/hyena.png",
+    "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
-      "button": ["tier-3-btn"],
-      "label": ["tier-3-label"],
-      "text": ["tier-3-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Ambulas",
-    "label": "<small> Pluto </small>",
+    "label": " Pluto ",
     "popupMessage": "",
-    "tier": 3,
+    "image": "/img/ambulas.png",
+    "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
-    "class": {
-      "button": ["tier-3-btn"],
-      "label": ["tier-3-label"],
-      "text": ["tier-3-popup"]
+     "class": {
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Kela De Thaym",
-    "label": "<small> Sedna </small>",
+    "label": " Sedna ",
     "popupMessage": "",
-    "tier": 3,
+    "image": "/img/kela.png",
+    "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
-      "button": ["tier-3-btn"],
-      "label": ["tier-3-label"],
-      "text": ["tier-3-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   },
   {
     "name": "Zealoid Prelate",
-    "label": "<small> Deimos </small>",
+    "label": " Deimos ",
     "popupMessage": "",
-    "tier": 3,
+    "image": "/img/zealoid.png",
+    "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
-      "button": ["tier-3-btn"],
-      "label": ["tier-3-label"],
-      "text": ["tier-3-popup"]
+      "button": ["tier-1-btn"],
+      "label": ["tier-1-label"],
+      "text": ["tier-1-popup"]
     }
   }
 ]
-

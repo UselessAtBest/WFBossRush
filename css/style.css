@@ -1,20 +1,63 @@
+:root.dark-mode {
+  --bg: #070421;
+  --card: #070421;
+  --accent: #FA789F;
+  --text: #FFFDD4;
+  --hover-text: #0e0842;
+  --muted: #0e0e0e;
+  --border: #FA789F;
+  --tier-1-bg: #0e0842;
+  --tier-1-border: #FA789F;
+  --inven-primary: #0e0842;
+  --themebuttonbg: #070421;
+  --themebuttonhover: #FA789F;
+  --themebtnborder: #FA789F;
+  --themebtnhoverborder: #fff;
+  --refundhover: #9E4B64;
+  --refund: #FA789F;
+
+}
+
 :root {
   --bg: #121212;
   --card: #1e1e1e;
   --accent: #401D87;
   --text: #f0f0f0;
+  --hover-text: #2a2a2a;
   --muted: #888;
   --border: #2a2a2a;
+  --tier-1-bg: #1E1E1E;
+  --tier-1-border: #401D87;
+  --inven-primary: #ffffff;
+  --themebuttonbg: #1E1E1E;
+  --themebuttonhover: #401D87;
+  --themebtnborder: #2A2A2A;
+  --themebtnhoverborder: #fff;
+  --refund: #7844e0;
+  --refundhover: #4d2a92;
 }
 
 :root.light-mode {
   --bg: #ffffff;
   --card: #f3f3f3;
-  --accent: #9172cf;
+  --accent: #401D87;
   --text: #111111;
+  --hover-text: #ffffff;
   --muted: #666;
   --border: #cccccc;
+  --tier-1-bg: #F5F5F5;
+  --tier-1-border: #8A2BE2;
+  --inven-primary: #ffffff;
+  --themebuttonbg: #401D87;
+  --themebuttonhover: #ffffff;
+  --themebtnborder: #000;
+  --themebtnhoverborder: #fff;
+  --refund: #7844e0;
+  --refundhover: #4d2a92;
 }
+
+
+
 
 * {
   box-sizing: border-box;
@@ -55,9 +98,22 @@ header button {
   transition: background 0.2s;
 }
 
+#themeToggle {
+  background-color: var(--themebuttonbg);
+  color: #fff;
+  border: 1px solid var(--themebtnborder);
+}
+
+#themeToggle:hover {
+  background-color: var(--themebuttonhover);
+  color: #fff;
+}
+
+
+
 header button:hover {
   background: var(--accent);
-  color: white;
+  color: var(--hover-text);
 }
 
 .container {
@@ -211,13 +267,13 @@ header button:hover {
 .tabs button:hover,
 .subtabs button:hover {
   background: var(--accent);
-  color: white;
+  color: var(--inven-primary);
 }
 
 .tabs button.active,
 .subtabs button.active {
   background: var(--accent);
-  color: white;
+  color: var(--inven-primary);
 }
 
 #inventoryList {
@@ -255,7 +311,7 @@ header button:hover {
 }
 
 .refund-btn {
-  background-color: #7844e0;
+  background-color: var(--refund);
   color: white;
   border: none;
   padding: 3px 6px;
@@ -266,7 +322,7 @@ header button:hover {
 }
 
 .refund-btn:hover {
-  background-color: #4d2a92;
+  background-color: var(--refundhover);
 }
 
 .remove-btn {
@@ -319,7 +375,9 @@ header button:hover {
 .popup {
   background: var(--card);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 50px;
+  border-color:#401D87;
+  border-width: 5px;
   max-width: 800px;
   text-align: center;
   border: 1px solid var(--border);
@@ -374,6 +432,8 @@ header button:hover {
 .multi-roll-popup .roll-list li {
   padding: 6px 0;
 }
+
+.general-pool
 
 .multi-roll-popup .roll-separator {
   border: 0;
@@ -446,6 +506,35 @@ header button:hover {
 
 .roll-header-btn:hover {
   background: #6541A5;
+}
+
+
+
+.button-grid button {
+  position: relative;
+  overflow: hidden;       
+  border-radius: 12px;    
+  padding: 0;             
+}
+
+
+.button-grid button img.button-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  z-index: 0;            
+}
+
+.button-grid button .button-name,
+.button-grid button .button-label {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;   
+  text-align: center;
+  color: white;           
 }
 
 @keyframes slideFadeIn {
