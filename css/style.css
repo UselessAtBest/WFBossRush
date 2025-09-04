@@ -1,4 +1,4 @@
-:root.dark-mode {
+:root {
   --bg: #070421;
   --card: #070421;
   --accent: #FA789F;
@@ -18,7 +18,7 @@
 
 }
 
-:root {
+:root.dark-mode {
   --bg: #121212;
   --card: #1e1e1e;
   --accent: #401D87;
@@ -574,3 +574,4 @@ header button:hover {
   from { opacity: 0.95; transform: translate(-50%, -50%); }
   to { opacity: 0; transform: translate(-50%, -40%); }
 }
+
