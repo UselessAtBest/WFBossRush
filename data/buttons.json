@@ -3,7 +3,7 @@
     "name": "Fragmented One",
     "label": "<b> SP Only  </b>",
     "popupMessage": "",
-    "image": "/img/fragmentedone.png",
+    "image": "/WFBossRush/img/fragmentedone.png",
     "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -209,4 +209,5 @@
       "text": ["tier-1-popup"]
     }
   }
+
 ]
