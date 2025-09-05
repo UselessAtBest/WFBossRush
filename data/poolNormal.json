@@ -57,7 +57,7 @@
 
 {"name": "Malignant Force                               ", "category": ["primary"],     "type": ["mods"], "rerolls": "1 ", "weight": 4},
 {"name": "Toxic Barrage                                 ", "category": ["primary"],     "type": ["mods"], "rerolls": "1 ", "weight": 4},
-{"name": "Pistol Pestilance                             ", "category": ["secondary"],   "type": ["mods"], "rerolls": "1 ", "weight": 4},
+{"name": "Pistol Pestilence                             ", "category": ["secondary"],   "type": ["mods"], "rerolls": "1 ", "weight": 4},
 {"name": "Virulent Scourge                              ", "category": ["melee"],       "type": ["mods"], "rerolls": "1 ", "weight": 4},
 
 {"name": "Infected Clip                                 ", "category": ["primary"],     "type": ["mods"], "rerolls": "1 ", "weight": 4},
@@ -67,7 +67,7 @@
 
 
 {"name": "Rime Rounds                                   ", "category": ["primary"],     "type": ["mods"], "rerolls": "1 ", "weight": 4},
-{"name": "Friged Blast                                  ", "category": ["melee"],       "type": ["mods"], "rerolls": "1 ", "weight": 4},
+{"name": "Frigid Blast                                  ", "category": ["melee"],       "type": ["mods"], "rerolls": "1 ", "weight": 4},
 {"name": "Frostbite                                     ", "category": ["secondary"],   "type": ["mods"], "rerolls": "1 ", "weight": 4},
 {"name": "Vicious Frost                                 ", "category": ["melee"],       "type": ["mods"], "rerolls": "1 ", "weight": 4},
 
@@ -1002,4 +1002,5 @@
 
 
 ]
+
 
