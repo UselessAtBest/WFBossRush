@@ -334,7 +334,7 @@
 {"name": "Prisma Lenz",             "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Prisma Tetra",            "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Quanta Vandal",           "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
-{"name": "rakta Cernos",            "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
+{"name": "Rakta Cernos",            "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Rubico Prime",            "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Sancti Tigris",           "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
 {"name": "Scouge Prime",            "category": ["primary"], "type": ["weapons"], "rerolls": "1", "weight": 1},
@@ -997,6 +997,7 @@
 {"name": "Focused Defense",                     "category": ["melee"], "type": ["mods"], "rerolls": "1", "weight": 4},
 {"name": "Parry",                               "category": ["melee"], "type": ["mods"], "rerolls": "1", "weight": 4},
 {"name": "Enduring Affliction",                 "category": ["melee"], "type": ["mods"], "rerolls": "1", "weight": 4}
+
 
 
 
