@@ -121,7 +121,7 @@
 
 {"name": "Primed Heated Charge                          ", "category": ["secondary"],   "type": ["mods"], "rerolls": "1 ", "weight": 4},
 
-{"name": "Primed Charged Shell                          ", "category": ["primary"],     "type": ["mods"], "rerolls": "1 ", "weight": 4},
+{"name": "Primed Charged Shell                          ", "category": ["primary", "Shotgun"],     "type": ["mods"], "rerolls": "1 ", "weight": 4},
 {"name": "Primed Convulsion                             ", "category": ["secondary"],   "type": ["mods"], "rerolls": "1 ", "weight": 4},
 
 
@@ -1002,6 +1002,7 @@
 
 
 ]
+
 
 
 
