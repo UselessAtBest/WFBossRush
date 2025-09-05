@@ -3,7 +3,7 @@
     "name": "Fragmented One",
     "label": "<b> SP Only  </b>",
     "popupMessage": "",
-    "image": "warframebossrush.com/img/fragmentedone.png",
+    "image": "../img/fragmentedone.png",
     "tier": 1,
     "rolls": { "poolNormal": 5, "poolLimited": 3 },
     "class": {
@@ -17,7 +17,7 @@
     "name": "Captain Vor",
     "label": " Mercury ",
     "popupMessage": "",
-    "image": "warframebossrush.com/img/vor.png",
+    "image": ".img/vor.png",
     "tier": 1,
     "rolls": { "poolNormal": 3, "poolLimited": 1 },
     "class": {
@@ -211,5 +211,6 @@
   }
 
 ]
+
 
 
