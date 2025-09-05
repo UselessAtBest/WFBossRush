@@ -5,9 +5,9 @@
     
 {"name": "FREE PICK",                                   "category": ["all"],                                "type": ["all"],  "rerolls": "1 ",  "weight": 1},
 {"name": "Galvanized Mod",                              "category": ["all"],                                "type": ["mods"], "rerolls": "12",  "weight": 1},
-{"name": "Augur mods",                                  "category": ["all"],                                "type": ["mods"], "rerolls": "8 ",  "weight": 1},
-{"name": "Gladiator mods",                              "category": ["all"],                                "type": ["mods"], "rerolls": "8 ",  "weight": 1},
-{"name": "Vigilante mods",                              "category": ["all"],                                "type": ["mods"], "rerolls": "8 ",  "weight": 1},
+{"name": "Augur Mods",                                  "category": ["all"],                                "type": ["mods"], "rerolls": "8 ",  "weight": 1},
+{"name": "Gladiator Mods",                              "category": ["all"],                                "type": ["mods"], "rerolls": "8 ",  "weight": 1},
+{"name": "Vigilante Mods",                              "category": ["all"],                                "type": ["mods"], "rerolls": "8 ",  "weight": 1},
 {"name": "Augment Mod",                                 "category": ["all"],                                "type": ["mods"], "rerolls": "3 ",  "weight": 1},
 {"name": "Mecha Mod",                                   "category": ["warframe"],                           "type": ["mods"], "rerolls": "2 ",  "weight": 4},
 {"name": "Nirma Set Mod",                               "category": ["warframe", "melee"],                  "type": ["mods"], "rerolls": "2 ",  "weight": 3},
@@ -29,8 +29,8 @@
 {"name": "Thrown Weapon Mod",                           "category": ["melee"],                              "type": ["mods"], "rerolls": "1",   "weight": 4},
 {"name": "Stance Mod",                                  "category": ["melee"],                              "type": ["mods"], "rerolls": "1",   "weight": 4},
 {"name": "Arcane",                                      "category": ["all"],                                "type": ["mods"], "rerolls": "10",  "weight": 4},
-{"name": "Parkour velocity mod",                        "category": ["warframe"],                           "type": ["mods"], "rerolls": "1",   "weight": 4},
-{"name": "Conclave mod",                                "category": ["warframe", "primary"],                "type": ["mods"], "rerolls": "2",   "weight": 4},
+{"name": "Parkour Velocity Mod",                        "category": ["warframe"],                           "type": ["mods"], "rerolls": "1",   "weight": 4},
+{"name": "Conclave Mod",                                "category": ["warframe", "primary"],                "type": ["mods"], "rerolls": "2",   "weight": 4},
 
 
 
@@ -1002,3 +1002,4 @@
 
 
 ]
+
