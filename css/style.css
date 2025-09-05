@@ -385,6 +385,7 @@ header button:hover {
   border-color:#401D87;
   border-width: 5px;
   max-width: 800px;
+  max-height: 90%;
   text-align: center;
   border: 1px solid var(--border);
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
@@ -580,3 +581,4 @@ header button:hover {
   from { opacity: 0.95; transform: translate(-50%, -50%); }
   to { opacity: 0; transform: translate(-50%, -40%); }
 }
+
