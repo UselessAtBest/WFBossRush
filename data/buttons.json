@@ -15,7 +15,7 @@
   },
     {
     "name": "Vay Hek",
-    "label": "<b> Earth  </b>",
+    "label": " Earth ",
     "popupMessage": "",
     "image": "./img/VayHekPortrait.png",
     "tier": 1,
@@ -224,6 +224,7 @@
   }
 
 ]
+
 
 
 
