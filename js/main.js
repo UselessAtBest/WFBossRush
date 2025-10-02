@@ -47,6 +47,40 @@ window.addEventListener("DOMContentLoaded", async () => {
     const btnSmall = document.getElementById("randomBtnB");
     if (btnSmall) btnSmall.addEventListener("click", () => handleHeaderRoll("B", "Boss Pool Roll"));
 
+    const btnGood = document.getElementById("randomBtnGood");
+    if (btnGood) btnGood.addEventListener("click", async () => {
+      try {
+        const response = await fetch("data/good.json");
+        const items = await response.json();
+        if (!items || !items.length) return;
+        const randomItem = items[Math.floor(Math.random() * items.length)];
+        const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+        const catText = randomItem.category ? randomItem.category.map(capitalize).join(", ") : "";
+        const typeText = randomItem.type ? randomItem.type.map(capitalize).join(", ") : "";
+        const msg = `<p class="popup-title">Good Pool Roll</p><p><strong>${randomItem.name}</strong><br>${catText} ${typeText}</p>`;
+        UI.showInfoPopup(msg);
+      } catch (err) {
+        console.error("Error rolling good.json:", err);
+      }
+    });
+
+       const btnBad = document.getElementById("randomBtnBad");
+    if (btnBad) btnBad.addEventListener("click", async () => {
+      try {
+        const response = await fetch("data/bad.json");
+        const items = await response.json();
+        if (!items || !items.length) return;
+        const randomItem = items[Math.floor(Math.random() * items.length)];
+        const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+        const catText = randomItem.category ? randomItem.category.map(capitalize).join(", ") : "";
+        const typeText = randomItem.type ? randomItem.type.map(capitalize).join(", ") : "";
+        const msg = `<p class="popup-title">Your Penalty is:</p><p><strong>${randomItem.name}</strong><br>${catText} ${typeText}</p>`;
+        UI.showInfoPopup(msg);
+      } catch (err) {
+        console.error("Error rolling bad.json:", err);
+      }
+    });
+
     const multiRoll = (countA, countB) => {
       const rolledItems = [];
       for (let i = 0; i < countA; i++) {

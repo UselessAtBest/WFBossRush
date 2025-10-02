@@ -1,0 +1,19 @@
+
+[
+
+{"name": "Primary Only",                                                                "weight": 1},
+{"name": "Secondary Only",                                                                "weight": 1},
+{"name": "Melee Only",                                                                "weight": 1},
+{"name": "No Companion",                                                                "weight": 1},
+{"name": "Equip Bleeding Dragon Key",                                                                "weight": 1},
+{"name": "Equip Decaying Dragon Key",                                                                "weight": 1},
+{"name": "Equip Hobbled Dragon Key",                                                                "weight": 1},
+{"name": "Equip Extinguished Dragon Key",                                                                "weight": 1},
+{"name": "No Jumping",                                                                "weight": 1},
+{"name": "No Rollong",                                                                "weight": 1},
+{"name": "No Aiming",                                                                "weight": 1},
+{"name": "Inverted Controls",                                                                "weight": 1},
+{"name": "Max In-Game Sensitivity",                                                                "weight": 1}
+
+
+]
