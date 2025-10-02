@@ -28,7 +28,10 @@
 {"name": "Companion Mod Free Pick",                     "category": ["all"],                                "type": ["mods"], "rerolls": "8",   "weight": 4},
 {"name": "Thrown Weapon Mod",                           "category": ["melee"],                              "type": ["mods"], "rerolls": "1",   "weight": 4},
 {"name": "Stance Mod",                                  "category": ["melee"],                              "type": ["mods"], "rerolls": "2",   "weight": 6},
-{"name": "Arcane",                                      "category": ["all"],                                "type": ["mods"], "rerolls": "10",  "weight": 4},
+{"name": "Warframe Arcane",                             "category": ["all"],                                "type": ["mods"], "rerolls": "10",  "weight": 4},
+{"name": "Primary Arcane",                              "category": ["all"],                                "type": ["mods"], "rerolls": "10",  "weight": 4},
+{"name": "Secaondary Arcane",                           "category": ["all"],                                "type": ["mods"], "rerolls": "10",  "weight": 4},
+{"name": "Melee Arcane",                                "category": ["all"],                                "type": ["mods"], "rerolls": "10",  "weight": 4},,
 {"name": "Parkour Velocity Mod",                        "category": ["warframe"],                           "type": ["mods"], "rerolls": "1",   "weight": 4},
 {"name": "Conclave Mod",                                "category": ["warframe", "primary"],                "type": ["mods"], "rerolls": "2",   "weight": 4},
 
@@ -984,6 +987,7 @@
 
 
 ]
+
 
 
 
