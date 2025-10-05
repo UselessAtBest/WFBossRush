@@ -10,10 +10,11 @@
 {"name": "Equip Hobbled Dragon Key",                                                                "weight": 1},
 {"name": "Equip Extinguished Dragon Key",                                                                "weight": 1},
 {"name": "No Jumping",                                                                "weight": 1},
-{"name": "No Rollong",                                                                "weight": 1},
+{"name": "No Rolling",                                                                "weight": 1},
 {"name": "No Aiming",                                                                "weight": 1},
 {"name": "Inverted Controls",                                                                "weight": 1},
 {"name": "Max In-Game Sensitivity",                                                                "weight": 1}
+
 
 
 ]
